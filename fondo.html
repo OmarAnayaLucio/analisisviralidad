@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Fondo de la Viralidad · TikTok & Instagram 2025–2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0b09;--bg2:#141310;--bg3:#1c1a16;--bg4:#242220;
+  --line:#2e2c28;--line2:#3a3834;
+  --text:#f0ebe0;--text2:#c8c3b8;--muted:#7a776e;--muted2:#9a9790;
+  --accent:#e8390e;--gold:#c9a84c;--teal:#3a9e72;--blue:#4a90d9;--purple:#8a5cf6;
+  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
+  --r:8px;--r2:14px;--r3:20px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:14.5px;line-height:1.65}
+nav{position:sticky;top:0;z-index:200;background:rgba(12,11,9,.95);backdrop-filter:blur(16px);border-bottom:.5px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:54px}
+.nav-logo{font-family:var(--fh);font-size:13px;font-weight:800;color:var(--text)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2px;flex-wrap:wrap}
+.nl{font-size:11px;font-weight:500;color:var(--muted);padding:5px 10px;border-radius:var(--r3);border:none;background:none;cursor:pointer;transition:all .15s;text-decoration:none;white-space:nowrap}
+.nl:hover,.nl.active{color:var(--text);background:var(--bg3)}
+.hero{max-width:1160px;margin:0 auto;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:var(--fh);font-size:26vw;font-weight:800;color:rgba(255,255,255,.02);line-height:1;pointer-events:none}
+.eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--accent)}
+.hero-title{font-family:var(--fh);font-size:clamp(44px,7vw,88px);font-weight:800;line-height:.94;letter-spacing:-.03em;margin-bottom:1.75rem}
+.hero-title .acc{color:var(--accent)}
+.hero-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.hero-desc{font-size:15px;color:var(--text2);line-height:1.78;font-weight:300}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:.5px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.hst{background:var(--bg2);padding:1.1rem 1.4rem}
+.hst-n{font-family:var(--fh);font-size:30px;font-weight:800;line-height:1;color:var(--text)}
+.hst-n sup{font-size:13px;color:var(--accent);vertical-align:super}
+.hst-l{font-size:11px;color:var(--muted);margin-top:4px}
+.htags{display:flex;gap:6px;flex-wrap:wrap}
+.htag{font-size:11px;font-weight:500;padding:4px 12px;border-radius:var(--r3);border:.5px solid var(--line2);color:var(--muted2)}
+.htag.hot{border-color:var(--accent);color:var(--accent);background:rgba(232,57,14,.07)}
+.wrap{max-width:1160px;margin:0 auto;padding:4rem 2rem;border-top:.5px solid var(--line)}
+.sec-eye{font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;display:flex;align-items:center;gap:8px}
+.sec-eye::before{content:'';width:16px;height:1px;background:var(--muted)}
+.sec-title{font-family:var(--fh);font-size:clamp(26px,3.5vw,42px);font-weight:800;line-height:1.02;letter-spacing:-.025em;margin-bottom:.8rem}
+.sec-title .acc{color:var(--accent)}
+.sec-intro{font-size:14px;color:var(--text2);line-height:1.75;max-width:660px;margin-bottom:2.5rem;font-weight:300}
+.tabs{display:flex;gap:6px;margin-bottom:1.75rem;flex-wrap:wrap}
+.tbtn{font-family:var(--fb);font-size:12px;font-weight:500;padding:6px 15px;border-radius:var(--r3);border:.5px solid var(--line2);background:var(--bg2);color:var(--muted);cursor:pointer;transition:all .15s}
+.tbtn:hover{background:var(--bg3);color:var(--text)}
+.tbtn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.dt{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:2rem}
+.dt th{text-align:left;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.6rem 1rem;border-bottom:.5px solid var(--line2);background:var(--bg2)}
+.dt td{padding:.85rem 1rem;border-bottom:.5px solid var(--line);vertical-align:top;line-height:1.5}
+.dt tr:hover td{background:var(--bg2)}
+.tn{font-weight:500;color:var(--text);font-size:13.5px}
+.ts{font-size:11.5px;color:var(--muted);margin-top:2px}
+.eb{display:flex;align-items:center;gap:8px}
+.ebf{height:4px;background:var(--accent);border-radius:3px}
+.ebv{font-size:12px;font-weight:500;color:var(--text2)}
+.pill{display:inline-block;font-size:10px;font-weight:500;padding:2px 7px;border-radius:var(--r3);border:.5px solid var(--line2);color:var(--muted);margin:2px 2px 0 0}
+.pill.hot{border-color:var(--accent);color:var(--accent);background:rgba(232,57,14,.07)}
+.pill.grow{border-color:var(--teal);color:var(--teal)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:.5px solid var(--line);border-radius:var(--r2);overflow:hidden;margin-bottom:2rem}
+.pc{background:var(--bg2);padding:1.5rem 1.75rem}
+.pn{font-family:var(--fh);font-size:20px;font-weight:800;margin-bottom:3px}
+.ps{font-size:11.5px;color:var(--muted);margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:.5px solid var(--line)}
+.pr{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:.5px solid var(--line);font-size:12.5px}
+.pr:last-child{border-bottom:none}
+.pk{color:var(--muted)}.pv{font-weight:500;color:var(--text)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.sb{background:var(--bg2);border:.5px solid var(--line);border-radius:var(--r2);padding:1.5rem}
+.sh{font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
+.sr{margin-bottom:10px}
+.sl{display:flex;justify-content:space-between;margin-bottom:4px;font-size:12.5px}
+.snm{color:var(--text2)}.spc{font-weight:500;color:var(--text)}
+.st{background:var(--bg4);border-radius:3px;height:5px;overflow:hidden}
+.sf{height:5px;border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1);width:0}
+.sf-tt{background:var(--accent)}.sf-ig{background:var(--purple)}
+.afg{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1px;background:var(--line);border:.5px solid var(--line);border-radius:var(--r2);overflow:hidden;margin-bottom:2rem}
+.afc{background:var(--bg2);padding:1.25rem 1.5rem}
+.afn{font-family:var(--fh);font-size:34px;font-weight:800;line-height:1;color:var(--accent)}
+.afl{font-size:12.5px;color:var(--text2);margin-top:5px;line-height:1.5}
+.fmg{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1px;background:var(--line);border:.5px solid var(--line);border-radius:var(--r2);overflow:hidden;margin-bottom:2rem}
+.fmc{background:var(--bg2);padding:1.5rem;cursor:pointer;transition:background .15s;border-top:2px solid transparent}
+.fmc:hover{background:var(--bg3)}
+.fmc.active{border-top-color:var(--accent);background:var(--bg3)}
+.fmb{height:2px;background:var(--accent);border-radius:2px;margin-bottom:1rem}
+.fmr{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.fmnm{font-family:var(--fh);font-size:16px;font-weight:700;color:var(--text);margin-bottom:.5rem;line-height:1.2}
+.fmst{display:flex;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap}
+.fmkv{font-size:11.5px}.fmk{color:var(--muted)}.fmv{font-weight:500;color:var(--text)}
+.fmd{font-size:12.5px;color:var(--text2);line-height:1.6}
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.5rem}
+.ins{background:var(--bg2);border:.5px solid var(--line);border-radius:var(--r);padding:1.1rem 1.35rem}
+.ins.a{border-left:2px solid var(--accent)}
+.ins.t{border-left:2px solid var(--teal)}
+.ins.b{border-left:2px solid var(--blue)}
+.ins.g{border-left:2px solid var(--gold)}
+.il{font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:5px}
+.ib{font-size:13.5px;color:var(--text2);line-height:1.65}
+.ib strong{color:var(--text);font-weight:500}
+.tc-div{margin-bottom:2rem}
+.tc-l{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.tc-l::after{content:'';flex:1;height:.5px;background:var(--line)}
+.tr-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tpill{background:var(--bg2);border:.5px solid var(--line);font-size:12.5px;color:var(--text2);padding:6px 14px;border-radius:var(--r3);cursor:pointer;transition:all .15s}
+.tpill:hover{background:var(--bg4);color:var(--text)}
+.tpill.hot{border-color:var(--accent);color:var(--accent)}
+.tpill.sel{background:var(--bg3);color:var(--text);border-color:var(--line2)}
+.tpill.hot.sel{background:var(--accent);color:white;border-color:var(--accent)}
+.td-box{background:var(--bg3);border:.5px solid var(--line2);border-radius:var(--r);padding:1.25rem 1.5rem;display:none;animation:fi .2s ease}
+.td-box.open{display:block}
+.tdt{font-weight:500;font-size:14.5px;margin-bottom:5px;color:var(--text)}
+.tdb{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:.75rem}
+.tda{padding:.7rem 1rem;background:var(--bg2);border-left:2px solid var(--accent);font-size:13px;color:var(--text);font-style:italic;border-radius:0 var(--r) var(--r) 0}
+.tda strong{font-style:normal;font-size:10px;font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:3px}
+.sc-head{font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:1.75rem 0 .75rem;padding-bottom:.5rem;border-bottom:.5px solid var(--line)}
+.sc-card{display:grid;grid-template-columns:185px 1fr auto;background:var(--bg2);border:.5px solid var(--line);border-radius:var(--r);margin-bottom:8px;overflow:hidden;transition:border-color .15s}
+.sc-card:hover{border-color:var(--line2)}
+.sc-plat{padding:1rem 1.1rem;background:var(--bg3);border-right:.5px solid var(--line)}
+.sc-nm{font-weight:500;font-size:13.5px;color:var(--text)}
+.sc-tp{font-size:11px;color:var(--muted);margin-top:2px}
+.sc-body{padding:1rem 1.25rem}
+.sc-desc{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:5px}
+.sc-url{font-size:11px;color:var(--blue);text-decoration:none;font-family:monospace;word-break:break-all}
+.sc-url:hover{color:var(--accent);text-decoration:underline}
+.sc-freq{padding:1rem 1.1rem;display:flex;align-items:center;border-left:.5px solid var(--line)}
+.fb{font-size:10px;font-weight:500;padding:3px 9px;border-radius:var(--r3);white-space:nowrap}
+.fb.live{background:rgba(232,57,14,.12);color:var(--accent);border:.5px solid rgba(232,57,14,.25)}
+.fb.weekly{background:rgba(58,158,114,.12);color:var(--teal);border:.5px solid rgba(58,158,114,.25)}
+.fb.monthly{background:rgba(74,144,217,.12);color:var(--blue);border:.5px solid rgba(74,144,217,.25)}
+.proto{display:grid;gap:0}
+.step{display:flex;gap:1.5rem;padding:1.35rem 0;border-bottom:.5px solid var(--line);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.stepn{font-family:var(--fh);font-size:28px;font-weight:800;color:var(--accent);line-height:1;flex-shrink:0;width:36px}
+.stept{font-weight:500;font-size:14px;color:var(--text);margin-bottom:4px}
+.stepd{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:5px}
+.steptl{font-size:11.5px;color:var(--teal);font-weight:500}
+.applyg{display:grid;gap:1px;background:var(--line);border:.5px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.apply-row{display:grid;grid-template-columns:1fr .5px 1fr;background:var(--bg2);transition:background .15s}
+.apply-row:hover{background:var(--bg3)}
+.apply-sep{background:var(--line)}
+.apply-col{padding:1.1rem 1.4rem}
+.apply-hd{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.apply-con{font-size:13px;color:var(--text2);line-height:1.6}
+.apply-mch{font-weight:500;color:var(--accent)}
+.apply-ex{font-style:italic;color:var(--text)}
+.fbox{background:var(--bg3);border:.5px solid var(--line2);border-radius:var(--r2);padding:1.75rem 2rem;margin-bottom:2rem;text-align:center}
+.fl{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.75rem}
+.feq{font-family:var(--fh);font-size:clamp(12px,1.7vw,15px);font-weight:700;color:var(--text);line-height:2.1}
+.feq .acc{color:var(--accent)}
+.fn-note{font-size:12.5px;color:var(--text2);margin-top:.75rem}
+.ng{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.nc{background:var(--bg2);border:.5px solid var(--line);border-radius:var(--r2);padding:1.5rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.nc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nc:hover::before,.nc.active::before{transform:scaleX(1)}
+.nc:hover{border-color:var(--line2);background:var(--bg3)}
+.nc.active{border-color:var(--gold);background:var(--bg3)}
+.ncico{font-size:22px;margin-bottom:.75rem}
+.nct{font-family:var(--fh);font-size:16px;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.ncs{font-size:12px;color:var(--muted)}
+.nd{background:var(--bg3);border:.5px solid var(--line2);border-radius:var(--r2);padding:1.75rem 2rem;margin-bottom:2rem;display:none;animation:fi .25s ease}
+.nd.open{display:block}
+.ndt{font-family:var(--fh);font-size:21px;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.ndb{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:1.25rem}
+.ndb strong{color:var(--text);font-weight:500}
+.ndfn{font-size:11px;color:var(--muted);border-top:.5px solid var(--line);padding-top:.75rem;margin-top:.5rem}
+.ndfn a{color:var(--blue);text-decoration:none}
+.ndfn a:hover{color:var(--accent)}
+.ndap{background:var(--bg2);border-left:2px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:.9rem 1.25rem;margin-top:1rem}
+.ndaph{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:5px}
+.ndapb{font-size:13px;color:var(--text);line-height:1.65;font-style:italic}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:1px;background:var(--line);border:.5px solid var(--line);border-radius:var(--r2);overflow:hidden;margin-bottom:2rem}
+.pcard{background:var(--bg2);padding:1.35rem 1.5rem;transition:background .15s}
+.pcard:hover{background:var(--bg3)}
+.pnum{font-family:var(--fh);font-size:11px;font-weight:700;color:var(--accent);margin-bottom:4px}
+.ptitle{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:5px}
+.pbody{font-size:12.5px;color:var(--text2);line-height:1.6}
+.pref{font-size:11px;color:var(--muted);margin-top:5px}
+.pref a{color:var(--blue);text-decoration:none}
+.pref a:hover{color:var(--accent)}
+.bt-wrap{overflow-x:auto;margin-bottom:2rem}
+.bt{width:100%;border-collapse:collapse;font-size:12.5px}
+.bt th{text-align:left;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.6rem 1rem;border-bottom:.5px solid var(--line2);background:var(--bg3)}
+.bt td{padding:.85rem 1rem;border-bottom:.5px solid var(--line);vertical-align:top;line-height:1.55;color:var(--text2)}
+.bt tr:hover td{background:var(--bg2)}
+.bname{font-weight:500;color:var(--text)}
+.bex{font-style:italic;color:var(--text);background:var(--bg4);border-left:2px solid var(--accent);padding:.4rem .7rem;margin-top:5px;border-radius:0 4px 4px 0;font-size:12px}
+.apaf{display:flex;gap:6px;margin-bottom:1.25rem;flex-wrap:wrap}
+.afbtn{font-size:11.5px;font-weight:500;padding:5px 13px;border-radius:var(--r3);border:.5px solid var(--line2);background:var(--bg2);color:var(--muted);cursor:pointer;transition:all .15s}
+.afbtn:hover{background:var(--bg3);color:var(--text)}
+.afbtn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.apa-list{display:grid;gap:8px}
+.apa-entry{background:var(--bg2);border:.5px solid var(--line);border-radius:var(--r);padding:1.1rem 1.35rem;transition:border-color .15s}
+.apa-entry:hover{border-color:var(--line2)}
+.apa-entry.hidden{display:none}
+.acat{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:var(--r3);margin-bottom:6px}
+.acat.plat{background:rgba(232,57,14,.1);color:var(--accent);border:.5px solid rgba(232,57,14,.2)}
+.acat.research{background:rgba(74,144,217,.1);color:var(--blue);border:.5px solid rgba(74,144,217,.2)}
+.acat.neuro{background:rgba(138,92,246,.1);color:var(--purple);border:.5px solid rgba(138,92,246,.2)}
+.acat.tools{background:rgba(58,158,114,.1);color:var(--teal);border:.5px solid rgba(58,158,114,.2)}
+.atext{font-size:13px;color:var(--text2);line-height:1.8}
+.aurl{color:var(--blue);text-decoration:none;word-break:break-all}
+.aurl:hover{color:var(--accent);text-decoration:underline}
+.afn{font-size:11px;color:var(--muted);margin-top:4px}
+footer{border-top:.5px solid var(--line);padding:2.5rem 2rem}
+.foot-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.foot-logo{font-family:var(--fh);font-size:13px;font-weight:800;color:var(--muted)}
+.foot-logo span{color:var(--accent)}
+.foot-note{font-size:11.5px;color:var(--muted)}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fd{animation:fi .5s ease both}
+@media(max-width:760px){
+  .hero-cols,.pg,.sg,.ins-grid,.ng{grid-template-columns:1fr}
+  .sc-card{grid-template-columns:1fr}
+  .sc-freq,.sc-plat{border:none;border-bottom:.5px solid var(--line)}
+  .apply-row{grid-template-columns:1fr}
+  .apply-sep{display:none}
+  nav .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">El Fondo de <span>la Viralidad</span></div>
+    <div class="nav-links">
+      <a class="nl" href="#categorias">Categorías</a>
+      <a class="nl" href="#plataformas">Plataformas</a>
+      <a class="nl" href="#audio">Audio</a>
+      <a class="nl" href="#formatos">Formatos</a>
+      <a class="nl" href="#tendencias">Tendencias</a>
+      <a class="nl" href="#fuentes">Fuentes</a>
+      <a class="nl" href="#protocolo">Protocolo</a>
+      <a class="nl" href="#neuro">Neurociencia</a>
+      <a class="nl" href="#referencias">Referencias</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero fd">
+  <div class="hero-bg">FV</div>
+  <div class="eyebrow">TikTok · Instagram · Facebook · 2025–2026</div>
+  <div class="hero-title">El <span class="acc">Fondo</span><br>de la<br>Viralidad</div>
+  <div class="hero-cols">
+    <div>
+      <p class="hero-desc">Si el primer curso disecó la <em>forma</em> — hooks, estructura, algoritmos — este diseca el <em>fondo</em>: qué tipo de contenido se ha viralizado realmente, qué hace el audio trending, dónde monitorear semana a semana, y la neurociencia detrás de influir en decisiones de compra en el nicho de recuperaciones bancarias.</p>
+    </div>
+    <div>
+      <div class="hero-stats">
+        <div class="hst"><div class="hst-n">200<sup>B</sup></div><div class="hst-l">Reproducciones diarias de Reels en Instagram + Facebook</div></div>
+        <div class="hst"><div class="hst-n">53.8<sup>m</sup></div><div class="hst-l">Minutos promedio diarios por usuario en TikTok (2026)</div></div>
+        <div class="hst"><div class="hst-n">79<sup>%</sup></div><div class="hst-l">De los Reels virales de Instagram usan audio trending</div></div>
+        <div class="hst"><div class="hst-n">5.6<sup>%</sup></div><div class="hst-l">Engagement con trending audio vs 3.1% con audio original</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="htags">
+    <span class="htag hot">TikTok · Instagram Reels</span>
+    <span class="htag">Datos verificados Mayo 2026</span>
+    <span class="htag">Neurociencia aplicada</span>
+    <span class="htag">Real Estate · Foreclosure</span>
+    <span class="htag">Referencias APA 7</span>
+  </div>
+</div>
+
+<div class="wrap" id="categorias">
+  <div class="sec-eye">01 · Investigación de contenido</div>
+  <div class="sec-title">Categorías de Contenido<br><span class="acc">Que se Han Viralizado</span></div>
+  <div class="sec-intro">Datos reales de qué tipo de contenido genera distribución masiva. Filtra por plataforma para ver qué funciona en cada una.</div>
+  <div class="tabs" id="cat-tabs">
+    <button class="tbtn active" onclick="filterCats('all',this)">Todas</button>
+    <button class="tbtn" onclick="filterCats('tiktok',this)">TikTok</button>
+    <button class="tbtn" onclick="filterCats('ig',this)">Instagram</button>
+    <button class="tbtn" onclick="filterCats('fb',this)">Facebook</button>
+  </div>
+  <table class="dt"><thead><tr>
+    <th style="width:22%">Categoría</th><th style="width:11%">Potencial</th><th style="width:16%">Plataforma</th><th style="width:27%">Por qué funciona</th><th style="width:24%">Señales</th>
+  </tr></thead><tbody id="cat-tbody"></tbody></table>
+</div>
+
+<div class="wrap" id="plataformas">
+  <div class="sec-eye">02 · Datos de plataforma</div>
+  <div class="sec-title">TikTok vs Instagram<br><span class="acc">vs Facebook — 2026</span></div>
+  <div class="sec-intro">El mismo contenido performa diferente en cada plataforma. Las métricas verificadas de cada una definen la estrategia de producción.</div>
+  <div class="pg">
+    <div class="pc">
+      <div class="pn" style="color:var(--accent)">TikTok</div>
+      <div class="ps">For You Page · 2.3B usuarios proyectados 2026</div>
+      <div class="pr"><span class="pk">Tiempo prom./día</span><span class="pv">53.8 min</span></div>
+      <div class="pr"><span class="pk">Señal #1</span><span class="pv">Retención completa</span></div>
+      <div class="pr"><span class="pk">Señal #2</span><span class="pv">Rewatch rate</span></div>
+      <div class="pr"><span class="pk">Peso de los likes</span><span class="pv" style="color:var(--muted)">Solo 3%</span></div>
+      <div class="pr"><span class="pk">Test inicial seeds</span><span class="pv">300–500 views</span></div>
+      <div class="pr"><span class="pk">Cuentas nuevas</span><span class="pv" style="color:var(--teal)">Mismo alcance</span></div>
+      <div class="pr"><span class="pk">Audio trending</span><span class="pv">Amplifica alcance</span></div>
+    </div>
+    <div class="pc">
+      <div class="pn" style="color:var(--purple)">Instagram Reels</div>
+      <div class="ps">Explore + Feed · 3B usuarios mensuales</div>
+      <div class="pr"><span class="pk">% tiempo en Reels</span><span class="pv">46% del app</span></div>
+      <div class="pr"><span class="pk">Señal #1</span><span class="pv">Watch time</span></div>
+      <div class="pr"><span class="pk">Señal #2</span><span class="pv">Sends vía DM</span></div>
+      <div class="pr"><span class="pk">Engagement Reels</span><span class="pv">1.23% promedio</span></div>
+      <div class="pr"><span class="pk">Plays diarios</span><span class="pv">200B (IG+FB)</span></div>
+      <div class="pr"><span class="pk">Cuentas nuevas</span><span class="pv" style="color:var(--gold)">Necesitan historial</span></div>
+      <div class="pr"><span class="pk">Trending audio boost</span><span class="pv">+42% engagement</span></div>
+    </div>
+    <div class="pc">
+      <div class="pn" style="color:var(--blue)">Facebook Video</div>
+      <div class="ps">Feed + Reels · 3B+ usuarios activos</div>
+      <div class="pr"><span class="pk">Engagement 2025</span><span class="pv" style="color:var(--teal)">+11% vs 2024</span></div>
+      <div class="pr"><span class="pk">Señal principal</span><span class="pv">Shares externos</span></div>
+      <div class="pr"><span class="pk">Formato líder</span><span class="pv">Video (4.84%)</span></div>
+      <div class="pr"><span class="pk">Demografía clave</span><span class="pv">25–54 años</span></div>
+      <div class="pr"><span class="pk">ROI inmobiliario</span><span class="pv" style="color:var(--teal)">Audiencia compradora</span></div>
+      <div class="pr"><span class="pk">Plays Reels/día</span><span class="pv">Parte de los 200B</span></div>
+      <div class="pr"><span class="pk">Cross-post</span><span class="pv">Sin watermark TikTok</span></div>
+    </div>
+  </div>
+  <div class="ins-grid">
+    <div class="ins a"><div class="il">TikTok · Insight crítico</div><div class="ib">Live videos (33.5%) y duetos (29.2%) son las features más usadas. <strong>Micro-influencers generan 17.96% de engagement</strong> vs 4.96% en mega-cuentas.</div></div>
+    <div class="ins t"><div class="il">Instagram · Insight crítico</div><div class="ib"><strong>694,000 Reels son enviados vía DM cada minuto.</strong> Mosseri confirmó: watch time, likes-per-reach y DM sends son los tres factores más importantes.</div></div>
+    <div class="ins g"><div class="il">Audio · Insight crítico</div><div class="ib">El <strong>34% del trending audio en Instagram origina en TikTok</strong> 5–10 días antes. Monitorear TikTok primero da ventaja anticipatoria.</div></div>
+    <div class="ins b"><div class="il">Cross-platform · Insight crítico</div><div class="ib">Publicar en Reels <strong>con watermark de TikTok penaliza el alcance.</strong> Siempre exportar sin watermark o usar herramientas de repurposing.</div></div>
+  </div>
+  <div class="sg">
+    <div class="sb"><div class="sh">TikTok · Peso de señales algorítmicas</div><div id="tt-sigs"></div></div>
+    <div class="sb"><div class="sh">Instagram Reels · Peso de señales algorítmicas</div><div id="ig-sigs"></div></div>
+  </div>
+</div>
+
+<div class="wrap" id="audio">
+  <div class="sec-eye">03 · El factor audio</div>
+  <div class="sec-title">El Audio es<br><span class="acc">Infraestructura Algorítmica</span></div>
+  <div class="sec-intro">El audio trending no es estética — los datos son contundentes sobre su impacto en alcance y distribución.</div>
+  <div class="afg">
+    <div class="afc"><div class="afn">79%</div><div class="afl">De los Reels virales usaron trending audio el último mes</div></div>
+    <div class="afc"><div class="afn">+42%</div><div class="afl">Más engagement con trending audio vs audio original</div></div>
+    <div class="afc"><div class="afn">5.6%</div><div class="afl">Engagement rate con trending audio vs 3.1% original</div></div>
+    <div class="afc"><div class="afn">7–10</div><div class="afl">Días que dura un trending audio en su pico antes de saturarse</div></div>
+    <div class="afc"><div class="afn">34%</div><div class="afl">Del trending audio de Reels originó primero en TikTok</div></div>
+    <div class="afc"><div class="afn">67%</div><div class="afl">De usuarios dicen que el audio influye su decisión de ver el Reel completo</div></div>
+  </div>
+  <div class="ins-grid">
+    <div class="ins a"><div class="il">Géneros dominantes en Reels</div><div class="ib">Pop: <strong>54%</strong> de top tracks · Hip-hop: <strong>22%</strong> · Electrónica: ~12% · Clips de películas/series: <strong>+36% engagement</strong></div></div>
+    <div class="ins t"><div class="il">Duración óptima del clip</div><div class="ib">Clips de <strong>10–15 segundos logran 26% más retención.</strong> El 53% de los audios trending miden menos de 20 segundos.</div></div>
+  </div>
+  <div class="ins a"><div class="il">Regla de oro — Audio en foreclosure</div><div class="ib">Usar el trending audio <strong>como fondo a bajo volumen</strong> mientras la voz en off mantiene autoridad. Un audio de meme en un video sobre embargos destruye la credibilidad percibida.</div></div>
+</div>
+
+<div class="wrap" id="formatos">
+  <div class="sec-eye">04 · Formatos de contenido</div>
+  <div class="sec-title">Los Formatos con Mayor<br><span class="acc">Potencial Viral en 2026</span></div>
+  <div class="sec-intro">Datos de 35 millones de posts analizados. Haz clic en cada formato para ver su estrategia de aplicación detallada.</div>
+  <div class="fmg" id="fmt-grid"></div>
+  <div id="fmt-det" style="display:none;background:var(--bg3);border:.5px solid var(--line2);border-radius:var(--r2);padding:1.75rem 2rem;margin-bottom:2rem;animation:fi .2s ease"></div>
+</div>
+
+<div class="wrap" id="tendencias">
+  <div class="sec-eye">05 · Tendencias activas</div>
+  <div class="sec-title">Formatos que Dominan<br><span class="acc">el Momento 2026</span></div>
+  <div class="sec-intro">Haz clic en cualquier tendencia para ver su mecánica y cómo aplicarla al nicho de recuperaciones bancarias.</div>
+  <div id="trends-wrap"></div>
+</div>
+
+<div class="wrap" id="fuentes">
+  <div class="sec-eye">06 · Inteligencia continua</div>
+  <div class="sec-title">Fuentes para Monitorear<br><span class="acc">Semana a Semana</span></div>
+  <div class="sec-intro">Recursos verificados organizados por frecuencia de actualización para mantenerse al día con trending audio y señales algorítmicas.</div>
+  <div id="sources-container"></div>
+</div>
+
+<div class="wrap" id="protocolo">
+  <div class="sec-eye">07 · Rutina operativa</div>
+  <div class="sec-title">Protocolo Semanal<br><span class="acc">de Inteligencia de Tendencias</span></div>
+  <div class="sec-intro">60 minutos semanales para nunca estar desactualizados. Directamente aplicado a la estrategia de foreclosure.</div>
+  <div class="proto" id="protocol"></div>
+</div>
+
+<div class="wrap">
+  <div class="sec-eye">08 · Aplicación directa</div>
+  <div class="sec-title">El Fondo de la Viralidad<br><span class="acc">Aplicado a Foreclosures</span></div>
+  <div class="sec-intro">Cada categoría viral mapeada al nicho. Pasa el cursor para ver el ejemplo de contenido.</div>
+  <div class="applyg" id="apply-grid"></div>
+</div>
+
+<div class="wrap" id="neuro">
+  <div class="sec-eye">09 · Neurociencia y psicología de la influencia</div>
+  <div class="sec-title">Cómo Influenciar en Redes<br><span class="acc">a Nivel Neurológico</span></div>
+  <div class="sec-intro">La ciencia detrás de cómo el contenido sobre recuperaciones bancarias activa respuestas cerebrales específicas que mueven del scroll a la acción. Selecciona un mecanismo para ver su análisis completo.</div>
+  <div class="ng" id="neuro-grid"></div>
+  <div id="neuro-detail"></div>
+  <div class="sec-eye" style="margin-top:2rem">Sesgos cognitivos aplicados al nicho</div>
+  <div class="sec-title" style="font-size:clamp(20px,2.5vw,30px);margin-bottom:1.5rem">Los 12 Sesgos que Mueven<br><span class="acc">Decisiones de Compra Inmobiliaria</span></div>
+  <div class="bt-wrap"><table class="bt"><thead><tr>
+    <th style="width:18%">Sesgo</th><th style="width:22%">Mecanismo neurológico</th><th style="width:30%">Aplicación en foreclosure</th><th style="width:30%">Ejemplo de hook</th>
+  </tr></thead><tbody id="bias-tbody"></tbody></table></div>
+  <div class="fbox">
+    <div class="fl">Ecuación de influencia para recuperaciones bancarias</div>
+    <div class="feq"><span class="acc">Acción</span> = (Credibilidad × Urgencia) + (Identidad aspiracional − Miedo al riesgo) + Prueba social</div>
+    <div class="fn-note">Cada elemento del video debe contribuir a al menos una variable. Si el contenido no reduce el miedo al riesgo, no convierte.<br>Síntesis: Cialdini (2001), Kahneman (2011), Ariely (2008).</div>
+  </div>
+  <div class="sec-eye" style="margin-top:2rem">Principios de influencia · Aplicación práctica</div>
+  <div class="pgrid" id="principles-grid"></div>
+</div>
+
+<div class="wrap" id="referencias">
+  <div class="sec-eye">10 · Referencias bibliográficas</div>
+  <div class="sec-title">Fuentes de esta<br><span class="acc">Investigación — APA 7</span></div>
+  <div class="sec-intro">Todas las fuentes citadas con formato APA 7. URLs interactivos para acceder directamente a cada recurso. Filtra por categoría.</div>
+  <div class="apaf">
+    <button class="afbtn active" onclick="filterAPA('all',this)">Todas</button>
+    <button class="afbtn" onclick="filterAPA('plat',this)">Plataformas</button>
+    <button class="afbtn" onclick="filterAPA('research',this)">Investigación</button>
+    <button class="afbtn" onclick="filterAPA('neuro',this)">Neurociencia</button>
+    <button class="afbtn" onclick="filterAPA('tools',this)">Herramientas</button>
+  </div>
+  <div class="apa-list" id="apa-list"></div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo">El Fondo de <span>la Viralidad</span></div>
+    <div class="foot-note">TikTok · Instagram · Facebook · Neurociencia · Mayo 2026</div>
+  </div>
+</footer>
+
+<script>
+const CAT_DATA=[
+  {name:"Educativo / 'Aprende esto'",sub:"Tutoriales, cheat sheets, explicaciones",eng:88,plat:["tiktok","ig"],pl:"TikTok · Reels",why:"Alta tasa de saves. El espectador guarda para después. Los saves retroalimentan el algoritmo más que los likes.",tags:["Saves","Rewatches","Tutorial"]},
+  {name:"Caso real con números",sub:"Precios reales, ingresos, documentos",eng:92,plat:["tiktok","ig"],pl:"TikTok · Reels",why:"Los números concretos detienen el scroll. La especificidad ($91,243) genera credibilidad inmediata y alta tasa de shares.",tags:["Shares","Follows","Screenshots"]},
+  {name:"Controversia / Hot take",sub:"Opiniones fuertes, verdades incómodas",eng:96,plat:["tiktok"],pl:"TikTok",why:"Genera el mayor volumen de comentarios. El desacuerdo alimenta el algoritmo tan fuerte como el acuerdo.",tags:["Comentarios","Stitch","Dueto"]},
+  {name:"Entretenimiento / Comedia",sub:"Skits, memes, situaciones relatable",eng:90,plat:["tiktok","fb"],pl:"TikTok · Facebook",why:"El 58% de los videos virales de TikTok generan happiness. La comedia se comparte porque hace quedar bien al emisor.",tags:["Shares","DMs","Comentarios"]},
+  {name:"Antes / Después",sub:"Transformaciones, resultados, renovaciones",eng:82,plat:["ig","fb"],pl:"Reels · Facebook",why:"El gap visual entre A y B crea satisfacción neurológica que impulsa completar el video. Alta completion rate.",tags:["Completion","Saves","Rewatch"]},
+  {name:"Conocimiento prohibido",sub:"Insider info, 'lo que el banco no te dice'",eng:89,plat:["tiktok","ig"],pl:"TikTok · Reels",why:"La información que parece reservada para iniciados genera curiosidad compulsiva y alta tasa de shares como 'regalo'.",tags:["Shares","DMs","Saves"]},
+  {name:"Serie episódica",sub:"Cliffhanger, deal documentado por partes",eng:95,plat:["tiktok","ig"],pl:"TikTok · Reels",why:"Convierte espectadores en seguidores activos. El cliffhanger al final es el mecanismo que garantiza el follow.",tags:["Follows","Retorno","Saves"]},
+  {name:"Screen recording tutorial",sub:"Mostrar bases de datos, documentos reales",eng:84,plat:["tiktok","ig"],pl:"TikTok · Reels",why:"Mostrar un proceso real en pantalla genera alta credibilidad. El espectador puede verificar lo que ve.",tags:["Saves","Shares","Rewatches"]},
+  {name:"Noticias / Evento actual",sub:"Comentario sobre tasas, morosidad, crisis",eng:78,plat:["fb","tiktok"],pl:"Facebook · TikTok",why:"Sincronización con eventos de alta búsqueda amplifica el alcance orgánico por alineación con tendencias activas.",tags:["Búsquedas","Shares","Comentarios"]},
+  {name:"ASMR / Satisfacción visual",sub:"Proceso, construcción, renovación en tiempo real",eng:76,plat:["ig","fb"],pl:"Reels · Facebook",why:"Alta retención y rewatch. El cerebro percibe orden visual como recompensa. Funciona bien con renovaciones de propiedades.",tags:["Rewatch","Saves","DMs"]}
+];
+const TT_SIGS=[{n:"Retención completa",p:32,w:95},{n:"Rewatch rate",p:25,w:74},{n:"Saves",p:18,w:53},{n:"Shares",p:15,w:44},{n:"Comentarios",p:7,w:21},{n:"Likes",p:3,w:9}];
+const IG_SIGS=[{n:"Sends vía DM",p:30,w:89},{n:"Saves",p:25,w:74},{n:"Watch time completo",p:22,w:65},{n:"Shares externos",p:12,w:36},{n:"Comentarios",p:7,w:21},{n:"Likes",p:4,w:12}];
+const FMT=[
+  {rank:"01 · Reach máximo",name:"Video corto 15–60 seg",bar:95,eng:"1.23%",reach:"Máximo",desc:"Formato dominante para descubrimiento y audiencias nuevas. Completion rate crítica — mantener sobre el 60%.",strat:"Hook en primeros 2s, payoff en segundo 50+, CTA específico. Añadir texto on-screen. Cortes cada 2–3 segundos."},
+  {rank:"02 · Engagement profundo",name:"Carrusel Instagram 3–20 slides",bar:88,eng:"0.55%",reach:"Saves+",desc:"Carruseles generan 10.15% avg engagement en cuentas activas. Son el formato líder para saves y retención.",strat:"First slide = hook visual. Slides 2–4 = escalada. Slides 5+ = valor denso. Último slide = CTA con beneficio claro."},
+  {rank:"03 · Serie y follows",name:"Serie episódica con cliffhanger",bar:97,eng:"Follows",reach:"Retorno",desc:"El formato más poderoso para convertir espectadores en seguidores. Crea deuda narrativa que garantiza el follow.",strat:"3–5 episodios. Cada uno termina con una pregunta sin responder. El episodio más viral suele ser el 2."},
+  {rank:"04 · Conversión directa",name:"Stories temporales 24h",bar:72,eng:"Link clicks",reach:"Íntima",desc:"500M usuarios diarios. No viraliza pero convierte. Es el espacio donde followers activos deciden tomar acción.",strat:"Para foreclosure: mostrar propiedades, links a listados, CTA de DM directo. Polls para segmentar audiencia."},
+  {rank:"05 · Credibilidad",name:"Talking head + B-roll 30–90 seg",bar:78,eng:"1.1%",reach:"Autoridad",desc:"El formato de experto hablando funciona cuando hay confianza. Reels con personas reciben 25% más clicks.",strat:"No hablar a cámara fija. Alternar con imágenes de propiedades, documentos, datos. El speaker debe moverse."},
+  {rank:"06 · Descubrimiento",name:"Screen recording + voz 'Así funciona'",bar:85,eng:"Saves",reach:"Confianza",desc:"Mostrar en pantalla una base de datos o proceso real. Credibilidad inmediata porque el proceso es verificable.",strat:"Mostrar cómo acceder a listas de foreclosure, filtrar por precio, ubicar subastas. Proceso verificable = confianza."}
+];
+const TRENDS=[
+  {label:"Formatos narrativos dominantes",items:[
+    {name:"POV (Point of View)",hot:true,desc:"El espectador es puesto en el lugar del creador. Genera empatía inmediata y alto engagement emocional.",apply:"'POV: Encontraste esta propiedad en la lista de foreclosures a las 11pm y das el deposit a las 9am del día siguiente.'"},
+    {name:"Story Drop con números reales",hot:true,desc:"Documentar un deal real con cifras exactas. Los números concretos son el hook más efectivo en contenido financiero.",apply:"'Compramos esta propiedad por $91,243. Aquí están los 6 documentos que firmamos y lo que cada uno significa.'"},
+    {name:"Serie con cliffhanger",hot:true,desc:"Dividir un proceso en episodios donde cada uno termina sin resolver. Obliga el follow.",apply:"'Parte 1: Encontré la propiedad. Parte 2: El banco rechazó mi oferta. Parte 3: Lo que hice en las siguientes 48 horas.'"},
+    {name:"Before / After transformation",hot:false,desc:"Mostrar el estado inicial y final con corte visual limpio. Satisfacción neurológica inmediata y alta completion rate.",apply:"'Esta casa fue embargada en marzo. Aquí está antes de la subasta vs después de 30 días de trabajo.'"}
+  ]},
+  {label:"Tendencias de contenido educativo",items:[
+    {name:"'Lo que nadie te dice sobre...'",hot:true,desc:"Framing de conocimiento prohibido. Activa curiosidad compulsiva y moneda social.",apply:"'Lo que tu banco no te dice sobre cómo fija el precio de reserva en subastas — y cómo usarlo a tu favor.'"},
+    {name:"Desmitificación / Myth Buster",hot:true,desc:"Destruir creencias ampliamente sostenidas pero falsas. El contraste genera pattern interrupt inmediato.",apply:"'No, no necesitas $200K para comprar en subasta. El número real que nadie anuncia.'"},
+    {name:"Paso a paso exacto",hot:false,desc:"Explicar un proceso con pasos numerados y concretos. Alta tasa de saves por valor futuro percibido.",apply:"'Los 6 pasos exactos para comprar una foreclosure desde cero — incluyendo el que todos fallan.'"},
+    {name:"Screen recording tutorial",hot:false,desc:"Mostrar en pantalla cómo usar una herramienta o base de datos real. Credibilidad inmediata.",apply:"'Así se ve la base de datos pública de foreclosures del gobierno — y cómo filtrarla para encontrar deals reales.'"}
+  ]},
+  {label:"Tendencias de alta controversia",items:[
+    {name:"'La verdad incómoda'",hot:true,desc:"Afirmar algo que genera incomodidad en ciertos grupos pero es defendible. Máximo volumen de comentarios.",apply:"'La verdad sobre comprar la casa de una familia embargada que nadie en este nicho quiere decir.'"},
+    {name:"Opinión fuerte + defensa",hot:true,desc:"Tomar una posición clara en un tema debatido y defenderla con datos. Atrae acuerdo y desacuerdo.",apply:"'Las foreclosures son la oportunidad más ética del mercado inmobiliario actual — y te explico por qué.'"},
+    {name:"Stitch / Dueto bait",hot:false,desc:"Contenido diseñado para provocar respuestas de otros creadores. Distribución en cadena.",apply:"Hacer stitch de un video donde un 'experto' explica mal el proceso de subasta y corregirlo con datos reales."}
+  ]},
+  {label:"Audio y formato visual",items:[
+    {name:"Trending audio + contenido serio",hot:true,desc:"Usar un trending audio como fondo mientras el contenido es informativo. Diferenciación + boost algorítmico.",apply:"Usar trending sound de baja intensidad mientras se muestra el documento de escritura y el precio real del deal."},
+    {name:"Jump cuts cada 2–3 segundos",hot:true,desc:"Cortar el video cada 2–3 segundos. +32% engagement vs single-shot videos.",apply:"En el segmento de 'cómo funciona la subasta' — cada paso del proceso = un cut diferente."},
+    {name:"Texto on-screen + voz",hot:true,desc:"Duplicar el mensaje verbal con texto en pantalla. +38% retención. Accesible para consumo en silencio.",apply:"Mostrar precio, nombre de plataforma y pasos en texto mientras se narra en voz off."},
+    {name:"CapCut templates virales",hot:false,desc:"Los templates de CapCut ya tienen trending audio incorporado y estructura de cortes probada.",apply:"Buscar templates de CapCut con tendencia activa y adaptar el contenido de foreclosure al formato existente."}
+  ]}
+];
+const SOURCES=[
+  {cat:"⚡ Tiempo Real — Daily / Live"},
+  {name:"TikTok Creative Center",type:"Plataforma oficial",desc:"Trending songs, hashtags y videos del momento. Datos de los últimos 7, 30 y 120 días. La fuente más confiable para trending audio nativo.",url:"https://ads.tiktok.com/business/creativecenter",freq:"live"},
+  {name:"Tokchart.com",type:"Tracker de audio",desc:"Dedicado exclusivamente a tracking de trending audio en TikTok. Gráficas de trayectoria de cada sonido en el tiempo.",url:"https://tokchart.com",freq:"live"},
+  {name:"Instagram Reels (nativo)",type:"Nativo en la app",desc:"Dentro del creador de Reels: 'Add audio' muestra trending sounds en tiempo real. Professional Dashboard muestra audios virales originales.",url:"https://www.instagram.com",freq:"live"},
+  {cat:"📅 Semanal — Curado por humanos"},
+  {name:"HeyOrca Trending Audio Guide",type:"Blog semanal",desc:"Actualizado cada viernes. Lista curada de trending audio para TikTok e Instagram con links directos. Incluye spreadsheet histórico.",url:"https://www.heyorca.com/blog/trending-audio-for-reels-tiktok",freq:"weekly"},
+  {name:"Later.com — Instagram Reels Trends",type:"Blog semanal",desc:"Top trending Reels del momento con ejemplos visuales y análisis de por qué funcionan. Incluye audio links.",url:"https://later.com/blog/instagram-reels-trends",freq:"weekly"},
+  {name:"Buffer.com — Trending Audio",type:"Blog semanal",desc:"Lista de trending sounds en Instagram con actualizaciones frecuentes. Incluye contexto cultural de cada sonido.",url:"https://buffer.com/resources/trending-audio-instagram",freq:"weekly"},
+  {name:"Ramdam.am — TikTok Trends",type:"Blog semanal",desc:"Tendencias TikTok semanales: sounds, formatos, humor viral y templates de CapCut. También cubre Meta/Instagram.",url:"https://www.ramd.am/blog/trends-tiktok",freq:"weekly"},
+  {cat:"🛠 Herramientas de Análisis — Continuo"},
+  {name:"TrendTok (App)",type:"App móvil",desc:"AI-powered trend detection para TikTok. Detecta trending sounds y hashtags antes de que saturen. Sugerencias por nicho y ubicación.",url:"https://trendtok.app",freq:"weekly"},
+  {name:"Metricool",type:"Analytics platform",desc:"Análisis de performance de TikTok e Instagram. Identifica tus mejores horarios de publicación y qué formatos tienen mayor engagement.",url:"https://metricool.com",freq:"weekly"},
+  {name:"Brand24",type:"Social listening",desc:"Monitoreo de menciones en TikTok, Instagram y más. Detecta trending hashtags relacionados con tu nicho. Alertas de spikes.",url:"https://brand24.com",freq:"live"},
+  {cat:"📊 Investigación Estratégica — Mensual/Anual"},
+  {name:"TikTok What's Next Report",type:"Trend report anual",desc:"Reporte oficial de TikTok con tendencias culturales y de contenido. Basado en datos de plataforma y estudios de usuario.",url:"https://ads.tiktok.com/business/library",freq:"monthly"},
+  {name:"Sprout Social Insights",type:"Benchmark reports",desc:"Reportes de engagement benchmarks por industria y plataforma. Actualizados mensualmente. Útil para comparar vs real estate.",url:"https://sproutsocial.com/insights",freq:"monthly"},
+  {name:"Social Insider Benchmarks",type:"Data platform",desc:"35M+ posts analizados. Benchmarks de engagement por formato, cuenta size y sector.",url:"https://www.socialinsider.io/social-media-benchmarks",freq:"monthly"},
+  {name:"Buffer State of Social Media",type:"Research anual",desc:"52M+ posts analizados. Comparativa cross-platform. La fuente más comprehensiva de datos de engagement.",url:"https://buffer.com/resources/state-of-social-media-engagement-2026",freq:"monthly"}
+];
+const PROTO=[
+  {title:"Lunes · 15 min — Escaneo de Tokchart + TikTok Creative Center",desc:"Revisa los top trending sounds de los últimos 7 días en Tokchart. En el Creative Center, revisa la pestaña 'Trending' para ver los tipos de video en el top 10 de tu categoría.",tool:"tokchart.com + ads.tiktok.com/business/creativecenter"},
+  {title:"Martes · 10 min — Review de HeyOrca + Later",desc:"Lee el resumen semanal de HeyOrca. Revisa Later.com para la actualización de Reels trends. Copia los links de audio trending relevantes a tu lista de trabajo.",tool:"heyorca.com + later.com/blog/instagram-reels-trends"},
+  {title:"Miércoles · 10 min — Scroll con intención en TikTok",desc:"Observar, no consumir. Revisa el FYP buscando: ¿qué formato nuevo aparece?, ¿qué tipo de hook se repite?, ¿algún competitor de real estate prueba algo nuevo?",tool:"Observación sistemática — sin distracciones"},
+  {title:"Jueves · 10 min — Verificación de Instagram Reels tab",desc:"Abre Instagram > Reels > Explorar. Identifica qué tipo de contenido domina. Revisa 'Audio trending' dentro del creador de Reels.",tool:"Instagram app nativa"},
+  {title:"Viernes · 15 min — Decisión y agenda",desc:"Decide: ¿hay algún trending audio aplicable? ¿Algún formato emergente que pueda adaptarse a foreclosure? Agenda producción de la semana siguiente. Registra qué sounds/formatos consideraste.",tool:"Spreadsheet propio + ramd.am (resumen semanal)"}
+];
+const APPLY=[
+  {t:"Categoría viral: Educativo",m:"Saves + Rewatches",e:"'El proceso exacto de una subasta foreclosure en 60 segundos — con el paso que el 94% falla'"},
+  {t:"Categoría viral: Caso real con números",m:"Shares + Follows",e:"'Compramos esta propiedad por $91,243. Aquí están los 6 documentos que firmamos'"},
+  {t:"Categoría viral: Controversia",m:"Comentarios + Stitch",e:"'La verdad incómoda sobre comprar foreclosures que nadie dice en este nicho'"},
+  {t:"Categoría viral: Conocimiento prohibido",m:"Shares + DMs",e:"'La lista de foreclosures que existe 6 semanas antes del mercado público — y cómo acceder'"},
+  {t:"Formato: Serie episódica",m:"Follows + Retorno",e:"Deal real documentado en 4 partes: Búsqueda → Subasta → Obstáculos → Cierre"},
+  {t:"Formato: Before / After",m:"Completion + Saves",e:"'Esta casa fue embargada en marzo. Aquí está el estado en que llegamos vs hoy'"},
+  {t:"Audio: Trending sound como fondo",m:"Reach algorítmico",e:"Tutorial de subasta con trending audio de bajo volumen como underscore"},
+  {t:"Timing: Evento actual de morosidad",m:"Búsquedas + Shares",e:"Video publicado el día de noticias sobre tasas hipotecarias o embargos récord"}
+];
+const NEURO_CARDS=[
+  {ico:"🧠",t:"Sistema de Recompensa Dopaminérgico",s:"Neurociencia del scroll y la atención"},
+  {ico:"⚡",t:"Arousal Emocional y Amígdala",s:"Por qué las emociones fuertes distribuyen"},
+  {ico:"🔒",t:"Aversión a la Pérdida (Loss Aversion)",s:"El miedo a perder vs el deseo de ganar"},
+  {ico:"🪞",t:"Neuronas Espejo y Empatía",s:"Cómo el POV activa identificación"},
+  {ico:"🎯",t:"Sesgo de Confirmación e Identidad Tribal",s:"Contenido que refuerza identidad aspiracional"},
+  {ico:"⏱",t:"Carga Cognitiva y Simplicidad",s:"Por qué la densidad bien estructurada retiene"},
+  {ico:"👥",t:"Prueba Social y Normatividad",s:"El efecto manada en decisiones financieras"},
+  {ico:"🏦",t:"Confianza y Credibilidad Percibida",s:"Neurociencia de por qué creemos a ciertos creadores"}
+];
+const NEURO_DET=[
+  {t:"Sistema de Recompensa Dopaminérgico",b:"Cada vez que alguien hace scroll y encuentra algo inesperado, el núcleo accumbens libera dopamina. <strong>Este mecanismo es el mismo que opera en el juego y la adicción</strong>, diseñado evolutivamente para motivar la búsqueda de recursos. Las plataformas explotan esta vía de recompensa variable: no sabes qué video viene después, lo que mantiene el scroll compulsivo.<br><br>Para foreclosure: el hook que revela un número inesperado ($91,000 por una casa de $380,000) activa este circuito exactamente. El cerebro interpreta esa incongruencia como señal de oportunidad de recursos — un recurso valioso apareció donde no se esperaba.",apply:"Construir el hook sobre una anomalía numérica real. No 'casa barata' sino '$91,243 por una propiedad tasada en $380,000'. La especificidad activa el circuito de recompensa con más fuerza que la generalidad.",fn:"Berridge, K. C., & Robinson, T. E. (1998). What is the role of dopamine in reward? <em>Brain Research Reviews, 28</em>(3), 309–369. <a href='https://doi.org/10.1016/S0165-0173(98)00019-8' target='_blank'>doi.org/10.1016/S0165-0173(98)00019-8</a>"},
+  {t:"Arousal Emocional y la Amígdala",b:"La amígdala es el sistema de alarma del cerebro. Se activa ante amenazas, oportunidades urgentes y situaciones sociales con consecuencias. Cuando el arousal emocional es alto, la amígdala <strong>suprime el razonamiento prefrontal</strong> y acelera la toma de decisiones. Esto explica por qué las emociones de alta activación (ira, asombro, urgencia) generan distribución — literalmente apagan el filtro racional.<br><br>La investigación de Berger & Milkman (2012) demostró que el contenido que genera arousal alto se comparte con mayor frecuencia, independientemente de si la emoción es positiva o negativa.",apply:"En foreclosures: 'Este banco ha estado haciéndolo por décadas...' activa la amígdala como amenaza social. 'Aquí está cómo beneficiarte' redirige esa energía hacia la acción. El ciclo amígdala → arousal → acción es el motor del contenido viral de nicho financiero.",fn:"Berger, J., & Milkman, K. L. (2012). What makes online content viral? <em>Journal of Marketing Research, 49</em>(2), 192–205. <a href='https://doi.org/10.1509/jmr.10.0353' target='_blank'>doi.org/10.1509/jmr.10.0353</a>"},
+  {t:"Aversión a la Pérdida (Loss Aversion)",b:"Kahneman y Tversky demostraron que <strong>perder $100 duele aproximadamente 2x más de lo que placer ganar $100</strong>. El cerebro evalúa las pérdidas con mayor intensidad que las ganancias equivalentes — una asimetría neurológica fundamental en la toma de decisiones financieras.<br><br>Para recuperaciones bancarias: la audiencia más receptiva no es la que busca ganar dinero, sino la que siente que está perdiendo una oportunidad que otros aprovechan. El framing de urgencia y escasez activa un mecanismo evolutivo real.",apply:"'El 94% de los compradores falla en el paso 3 de la subasta' activa aversión a la pérdida más que 'aprende cómo comprar en subasta'. Diseñar el contenido desde la pérdida potencial, no desde la ganancia esperada.",fn:"Kahneman, D., & Tversky, A. (1979). Prospect theory. <em>Econometrica, 47</em>(2), 263–291. <a href='https://doi.org/10.2307/1914185' target='_blank'>doi.org/10.2307/1914185</a>"},
+  {t:"Neuronas Espejo y Empatía",b:"Las neuronas espejo se activan tanto cuando realizamos una acción como cuando observamos a alguien más realizarla. <strong>Cuando alguien ve un POV en video, su cerebro literalmente simula estar en esa situación</strong> — la base neurológica de la empatía y la identificación social.<br><br>Esto explica por qué el formato POV es tan efectivo: 'POV: Acabas de comprar una foreclosure por $91K' hace que el espectador experimente neurológicamente el éxito antes de tomar ninguna decisión.",apply:"Usar POV consistentemente: 'POV: Eres el primero en llegar a la subasta', 'POV: El banco acaba de aceptar tu oferta'. Cada POV exitoso que el espectador 'experimenta' vía neuronas espejo refuerza la identidad aspiracional de inversor.",fn:"Rizzolatti, G., & Craighero, L. (2004). The mirror-neuron system. <em>Annual Review of Neuroscience, 27</em>, 169–192. <a href='https://doi.org/10.1146/annurev.neuro.27.070203.144230' target='_blank'>doi.org/10.1146/annurev.neuro.27.070203.144230</a>"},
+  {t:"Sesgo de Confirmación e Identidad Tribal",b:"El cerebro busca activamente información que confirme sus creencias y rechaza la que las contradice. Pero más poderoso aún: busca señales de pertenencia a su grupo de identidad. <strong>Las personas comparten contenido que refleja quiénes creen que son o quiénes quieren ser</strong>.<br><br>Para recuperaciones bancarias: el espectador que se percibe como 'inversor inteligente' comparte contenido que refuerza esa identidad. No está compartiendo el video — está compartiendo su imagen ante los demás.",apply:"'Si eres el tipo de persona que busca deals donde nadie más mira...' filtra a la audiencia correcta y activa el sesgo de pertenencia. Los que no son ese tipo de persona también ven el video, por curiosidad o para debate.",fn:"Tajfel, H., & Turner, J. C. (1979). An integrative theory of intergroup conflict. In <em>The Social Psychology of Intergroup Relations</em> (pp. 33–47). <a href='https://www.researchgate.net/publication/279879979' target='_blank'>researchgate.net/publication/279879979</a>"},
+  {t:"Carga Cognitiva y Procesamiento Dual",b:"El sistema cognitivo opera en dos modos: <strong>Sistema 1 (automático, rápido, emocional) y Sistema 2 (deliberado, lento, racional)</strong>. El contenido de redes sociales opera casi exclusivamente en Sistema 1 — no hay tiempo para deliberación en el scroll.<br><br>El contenido que reduce la carga cognitiva (texto on-screen, estructura clara, números concretos) permite que el Sistema 1 procese el mensaje sin necesitar cambiar al Sistema 2. Cuando el espectador necesita esforzarse para entender, abandona el video.",apply:"Diseñar cada video asumiendo que el espectador usa Solo Sistema 1: texto on-screen que duplica el audio, números en lugar de frases vagas, pasos numerados visibles. La producción que 'facilita' el consumo no es simplista — es neurológicamente inteligente.",fn:"Kahneman, D. (2011). <em>Thinking, fast and slow.</em> Farrar, Straus and Giroux. <a href='https://us.macmillan.com/books/9780374533557/thinkingfastandslow' target='_blank'>macmillan.com/books/9780374533557</a>"},
+  {t:"Prueba Social y Normatividad Descriptiva",b:"Cialdini identificó la prueba social como uno de los seis principios de influencia más poderosos. El mecanismo neurológico: el cerebro usa el comportamiento de los demás como heurística de decisión bajo incertidumbre. <strong>Si muchos lo hacen, debe ser correcto</strong>.<br><br>En foreclosures, donde la audiencia tiene alta incertidumbre sobre si el proceso es seguro/ético/rentable, la prueba social es especialmente potente: ver que otros 'como ellos' han comprado exitosamente reduce la incertidumbre y el miedo al riesgo.",apply:"Incorporar prueba social en los primeros 15 segundos: número de deals cerrados, testimonios en texto, cifras reales de otros compradores. 'Hemos ayudado a 47 inversores a comprar su primera foreclosure' reduce el miedo más que cualquier argumento lógico.",fn:"Cialdini, R. B. (2001). <em>Influence: The psychology of persuasion</em> (Rev. ed.). HarperCollins. <a href='https://www.harpercollins.com/products/influence-robert-b-cialdini' target='_blank'>harpercollins.com/products/influence-robert-b-cialdini</a>"},
+  {t:"Confianza, Credibilidad y la Corteza Prefrontal",b:"La confianza se construye a través de señales que el cerebro evalúa en milisegundos: consistencia temporal, prueba concreta, coherencia entre palabras y evidencia. <strong>La corteza prefrontal ventromedial evalúa la confiabilidad de una fuente</strong> en los primeros 2–3 segundos de exposición.<br><br>Para creadores de contenido financiero: la confianza no se declara ('soy un experto'), se demuestra (documentos reales, números verificables, consecuencias reales). El cerebro detecta inmediatamente la disonancia entre afirmación y evidencia.",apply:"En cada video de foreclosure: mostrar un elemento verificable en los primeros 10 segundos. No 'soy experto en subastas' — sino el documento de escritura con el precio real en pantalla. La evidencia concreta activa la corteza prefrontal en modo 'esto es confiable'.",fn:"Fehr, E., & Gächter, S. (2002). Altruistic punishment in humans. <em>Nature, 415</em>, 137–140. <a href='https://doi.org/10.1038/415137a' target='_blank'>doi.org/10.1038/415137a</a>"}
+];
+const BIASES=[
+  {n:"Sesgo de Disponibilidad",neu:"Amígdala + hipocampo: lo que se recuerda fácil parece más frecuente y probable",app:"Mostrar foreclosures frecuentemente en el feed hace que la audiencia perciba la práctica como más común y segura de lo que cree",hook:"'3 de cada 10 propiedades vendidas este mes en [ciudad] fueron foreclosures — y la mayoría de compradores ni saben que ocurrió'"},
+  {n:"Efecto Zeigarnik",neu:"Corteza prefrontal: retiene mejor información incompleta que completa",app:"El cliffhanger en cada episodio de un deal activa retención activa. El espectador no puede dejar de pensar en el video.",hook:"'El banco dijo que no. Lo que hicimos en las siguientes 6 horas... Parte 2 mañana.'"},
+  {n:"Principio de Escasez",neu:"Amígdala: la escasez activa respuesta de amenaza primitiva",app:"Las subastas tienen fecha límite real. Mostrar el countdown al próximo remate activa urgencia neurológica genuina.",hook:"'Quedan 72 horas para la próxima subasta en [ciudad]. Aquí está cómo prepararte.'"},
+  {n:"Efecto Halo",neu:"Corteza orbitofrontal: una característica positiva colorea la percepción del todo",app:"Mostrar una transacción exitosa (números reales, documentos) crea un halo de competencia que transfiere credibilidad a toda la marca.",hook:"Mostrar el contrato firmado en los primeros 10 segundos — el resto del video hereda esa credibilidad."},
+  {n:"Anclaje cognitivo",neu:"Sistema 1: el primer número que se ve ancla todas las evaluaciones posteriores",app:"Mencionar el valor de tasación ANTES del precio de compra hace que el precio parezca aún más bajo por contraste.",hook:"'Esta propiedad está tasada en $380,000. El precio que pagamos: $91,243.'"},
+  {n:"Aversión a la Pérdida",neu:"Amígdala + sistema límbico: perder duele 2x más que ganar el equivalente",app:"Framing de oportunidad perdida activa más motivación que framing de ganancia potencial.",hook:"'El inversor que llegó 20 minutos después que yo perdió este deal. Aquí está por qué el timing lo es todo.'"},
+  {n:"Prueba Social",neu:"Corteza cingulada anterior: reduce incertidumbre usando comportamiento ajeno como heurística",app:"Testimonios numéricos ('47 inversores han usado este método') reducen el miedo al riesgo más que cualquier argumento.",hook:"'47 inversores han comprado su primera foreclosure usando exactamente este proceso.'"},
+  {n:"Efecto de Mera Exposición",neu:"Sistema límbico: la familiaridad genera preferencia sin razonamiento consciente",app:"Aparecer consistentemente en el feed 3x/semana crea familiaridad que se traduce en confianza antes de cualquier decisión consciente.",hook:"No es un hook — es la consecuencia de 60 días de consistencia de publicación."},
+  {n:"Sesgo de Ingroup",neu:"Corteza prefrontal medial: el cerebro trata al ingroup con más confianza automáticamente",app:"Crear una identidad de comunidad hace que los seguidores defiendan el contenido y lo compartan al ingroup.",hook:"'Si estás leyendo esto, eres el tipo de persona que busca deals donde nadie más mira.'"},
+  {n:"Reciprocidad",neu:"Ínsula y corteza orbitofrontal: dar activa obligación de devolver a nivel primal",app:"Dar el proceso completo de acceso a listas de foreclosure GRATIS crea deuda psicológica que se devuelve con follows y referidos.",hook:"'Aquí está la base de datos pública de foreclosures que nadie te enseña a usar. Completamente gratis.'"},
+  {n:"Autoridad",neu:"Corteza prefrontal: reduce carga cognitiva al delegar decisiones a figuras de autoridad",app:"Documentos reales, cifras verificables y procesos concretos activan la percepción de autoridad sin declarar expertise.",hook:"El documento de escritura en pantalla vale más que decir 'soy experto'."},
+  {n:"Consistencia cognitiva",neu:"Corteza cingulada anterior: el cerebro evita la disonancia entre creencias y comportamientos",app:"Una vez que alguien sigue la cuenta y comenta, su cerebro necesita ser consistente con esa elección.",hook:"'Comenta SUBASTA y te mando el proceso paso a paso.' — el primer compromiso pequeño construye consistencia."}
+];
+const PRINCIPLES=[
+  {num:"01",t:"Reciprocidad",b:"Da primero sin pedir. El contenido de alto valor gratuito activa deuda psicológica que se devuelve en follows, DMs y referidos.",ref:"Cialdini (2001)",url:"https://www.harpercollins.com/products/influence-robert-b-cialdini"},
+  {num:"02",t:"Escasez real",b:"Las subastas foreclosure tienen fechas límite reales. Hacer esa escasez visible activa urgencia neurológica genuina, no manufacturada.",ref:"Cialdini (2001)",url:"https://www.harpercollins.com/products/influence-robert-b-cialdini"},
+  {num:"03",t:"Autoridad demostrada",b:"No declarada. El documento en pantalla vale más que 'soy experto'. La corteza prefrontal evalúa evidencia, no títulos.",ref:"Cialdini (2001)",url:"https://www.harpercollins.com/products/influence-robert-b-cialdini"},
+  {num:"04",t:"Prueba social cuantificada",b:"'47 inversores' vs 'muchos inversores'. Los números activan el procesamiento analítico mientras refuerzan la heurística social.",ref:"Kahneman (2011)",url:"https://us.macmillan.com/books/9780374533557/thinkingfastandslow"},
+  {num:"05",t:"Consistencia de identidad",b:"El primer compromiso pequeño (comentar, guardar, seguir) predice el engagement futuro por necesidad cognitiva de ser consistente.",ref:"Festinger (1957)",url:"https://www.sup.org/books/title/?id=3850"},
+  {num:"06",t:"Agrado y similitud",b:"El espectador confía más en quien parece similar. Mostrar el proceso 'desde adentro', con errores reales, activa similitud percibida.",ref:"Cialdini (2001)",url:"https://www.harpercollins.com/products/influence-robert-b-cialdini"}
+];
+const APA=[
+  {c:"plat",tx:"Metricool. (2026, mayo). <em>TikTok trends 2026: What actually works?</em>",url:"https://metricool.com/tiktok-trends/",fn:"Datos de formatos TikTok"},
+  {c:"plat",tx:"Teleprompter.com. (2025). <em>2025 Instagram Reels statistics: User & content trends.</em>",url:"https://www.teleprompter.com/blog/2025-instagram-reels-statistics",fn:"Estadísticas de Reels"},
+  {c:"plat",tx:"Vidico. (2026). <em>Instagram Reels statistics 2026: Key stats and what they mean for growth.</em>",url:"https://vidico.com/news/instagram-reels-statistics/",fn:"Datos de Reels 2026"},
+  {c:"plat",tx:"Sprout Social. (2026, abril). <em>Instagram statistics marketers should know in 2026 [Updated].</em>",url:"https://sproutsocial.com/insights/instagram-stats/",fn:"Benchmarks Instagram"},
+  {c:"plat",tx:"Social Insider. (2026). <em>2026 Instagram organic engagement benchmarks</em> [Análisis de 35M posts].",url:"https://www.socialinsider.io/social-media-benchmarks/instagram",fn:"35M posts analizados"},
+  {c:"plat",tx:"Buffer. (2026). <em>The state of social media engagement in 2026: 52M+ posts analyzed.</em>",url:"https://buffer.com/resources/state-of-social-media-engagement-2026/",fn:"Comparativa cross-platform"},
+  {c:"plat",tx:"Loopex Digital. (2026). <em>Instagram Reels statistics 2026: Key stats and what they mean for growth.</em>",url:"https://www.loopexdigital.com/blog/instagram-reels-statistics",fn:"200B plays diarios"},
+  {c:"plat",tx:"Notta.ai. (2025). <em>50+ TikTok statistics & facts need to know in 2025.</em>",url:"https://www.notta.ai/en/blog/tiktok-statistics",fn:"Estadísticas TikTok generales"},
+  {c:"plat",tx:"Dataslayer. (2026, abril). <em>Instagram algorithm 2025: Complete guide for marketers.</em>",url:"https://www.dataslayer.ai/blog/instagram-algorithm-2025-complete-guide-for-marketers",fn:"Algoritmo Instagram"},
+  {c:"plat",tx:"Zebracat. (2025, marzo). <em>100+ Instagram Reels statistics for 2025.</em>",url:"https://www.zebracat.ai/post/instagram-reels-statistics",fn:"Datos de audio en Reels"},
+  {c:"research",tx:"TikTok for Business. (2025). <em>What's next 2025: Trend report.</em> TikTok Ads Library.",url:"https://ads.tiktok.com/business/library",fn:"Reporte oficial TikTok"},
+  {c:"research",tx:"HeyOrca. (2026). <em>2026 trending TikTok and Instagram Reels audio [updated weekly].</em>",url:"https://www.heyorca.com/blog/trending-audio-for-reels-tiktok",fn:"Trending audio semanal"},
+  {c:"research",tx:"Buffer. (2026, mayo). <em>13 trending sounds on Instagram in May 2026 (+ how to use them).</em>",url:"https://buffer.com/resources/trending-audio-instagram/",fn:"Trending audio Mayo 2026"},
+  {c:"research",tx:"Later. (2026). <em>Top Instagram Reels trends to try in 2026 (updated weekly).</em>",url:"https://later.com/blog/instagram-reels-trends/",fn:"Tendencias Reels 2026"},
+  {c:"research",tx:"Ramdam. (2026, mayo). <em>TikTok trends — May 2026.</em>",url:"https://www.ramd.am/blog/trends-tiktok",fn:"Tendencias TikTok Mayo 2026"},
+  {c:"research",tx:"Tokchart. (2026, mayo 14). <em>Top trending songs on TikTok today 14 May 2026.</em>",url:"https://tokchart.com/",fn:"Trending audio diario TikTok"},
+  {c:"neuro",tx:"Berger, J., & Milkman, K. L. (2012). What makes online content viral? <em>Journal of Marketing Research, 49</em>(2), 192–205.",url:"https://doi.org/10.1509/jmr.10.0353",fn:"Arousal emocional y distribución"},
+  {c:"neuro",tx:"Berridge, K. C., & Robinson, T. E. (1998). What is the role of dopamine in reward? <em>Brain Research Reviews, 28</em>(3), 309–369.",url:"https://doi.org/10.1016/S0165-0173(98)00019-8",fn:"Sistema dopaminérgico"},
+  {c:"neuro",tx:"Kahneman, D. (2011). <em>Thinking, fast and slow.</em> Farrar, Straus and Giroux.",url:"https://us.macmillan.com/books/9780374533557/thinkingfastandslow",fn:"Sistema 1 y 2, carga cognitiva"},
+  {c:"neuro",tx:"Kahneman, D., & Tversky, A. (1979). Prospect theory: An analysis of decision under risk. <em>Econometrica, 47</em>(2), 263–291.",url:"https://doi.org/10.2307/1914185",fn:"Aversión a la pérdida"},
+  {c:"neuro",tx:"Cialdini, R. B. (2001). <em>Influence: The psychology of persuasion</em> (Rev. ed.). HarperCollins.",url:"https://www.harpercollins.com/products/influence-robert-b-cialdini",fn:"6 principios de influencia"},
+  {c:"neuro",tx:"Rizzolatti, G., & Craighero, L. (2004). The mirror-neuron system. <em>Annual Review of Neuroscience, 27</em>, 169–192.",url:"https://doi.org/10.1146/annurev.neuro.27.070203.144230",fn:"Neuronas espejo y empatía"},
+  {c:"neuro",tx:"Tajfel, H., & Turner, J. C. (1979). An integrative theory of intergroup conflict. In W. G. Austin & S. Worchel (Eds.), <em>The Social Psychology of Intergroup Relations</em> (pp. 33–47). Brooks/Cole.",url:"https://www.researchgate.net/publication/279879979",fn:"Identidad social y tribu"},
+  {c:"neuro",tx:"Fehr, E., & Gächter, S. (2002). Altruistic punishment in humans. <em>Nature, 415</em>, 137–140.",url:"https://doi.org/10.1038/415137a",fn:"Confianza y reciprocidad"},
+  {c:"neuro",tx:"Ariely, D. (2008). <em>Predictably irrational: The hidden forces that shape our decisions.</em> HarperCollins.",url:"https://www.harpercollins.com/products/predictably-irrational-dan-ariely",fn:"Sesgos cognitivos en decisiones"},
+  {c:"neuro",tx:"Festinger, L. (1957). <em>A theory of cognitive dissonance.</em> Stanford University Press.",url:"https://www.sup.org/books/title/?id=3850",fn:"Consistencia cognitiva"},
+  {c:"tools",tx:"Brand24. (2026). <em>The 7 best TikTok monitoring tools to use in 2026.</em>",url:"https://brand24.com/blog/tiktok-monitoring-tools/",fn:"Herramientas monitoreo TikTok"},
+  {c:"tools",tx:"Buffer. (2026). <em>How to find trending TikTok sounds in 2026.</em>",url:"https://buffer.com/resources/how-to-find-trending-tiktok-sounds/",fn:"Guía de trending sounds"},
+  {c:"tools",tx:"Sprout Social. (2026, abril). <em>10 best social media monitoring tools for 2026.</em>",url:"https://sproutsocial.com/insights/social-media-monitoring-tools/",fn:"Herramientas de monitoreo"},
+  {c:"tools",tx:"Recurpost. (2026). <em>Most effective TikTok content types & categories for 2026.</em>",url:"https://recurpost.com/blog/tiktok-content-types/",fn:"Tipos de contenido efectivos"}
+];
+
+function filterCats(plat,btn){
+  document.querySelectorAll('#cat-tabs .tbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#cat-tbody tr').forEach(r=>{
+    r.style.display=(plat==='all'||r.dataset.plat.includes(plat))?'':'none';
+  });
+}
+function renderCats(){
+  const tb=document.getElementById('cat-tbody');
+  CAT_DATA.forEach(c=>{
+    const tr=document.createElement('tr');
+    tr.dataset.plat=c.plat.join(',');
+    const tags=c.tags.map(t=>`<span class="pill hot">${t}</span>`).join('');
+    tr.innerHTML=`<td><div class="tn">${c.name}</div><div class="ts">${c.sub}</div></td><td><div class="eb"><div class="ebf" style="width:${c.eng*.6}px"></div><span class="ebv">${c.eng}%</span></div></td><td style="font-size:12.5px;color:var(--text2)">${c.pl}</td><td style="font-size:12.5px;color:var(--text2)">${c.why}</td><td>${tags}</td>`;
+    tb.appendChild(tr);
+  });
+}
+function renderSigs(){
+  function mk(data,id,cls){
+    const c=document.getElementById(id);
+    data.forEach(s=>{c.innerHTML+=`<div class="sr"><div class="sl"><span class="snm">${s.n}</span><span class="spc">${s.p}%</span></div><div class="st"><div class="sf ${cls}" data-w="${s.w}"></div></div></div>`;});
+  }
+  mk(TT_SIGS,'tt-sigs','sf-tt');mk(IG_SIGS,'ig-sigs','sf-ig');
+  setTimeout(()=>document.querySelectorAll('.sf').forEach(b=>b.style.width=b.dataset.w+'%'),600);
+}
+let activeFmt=null;
+function renderFmts(){
+  const g=document.getElementById('fmt-grid');
+  FMT.forEach((f,i)=>{
+    const d=document.createElement('div');d.className='fmc';
+    d.innerHTML=`<div class="fmb" style="width:${f.bar}%"></div><div class="fmr">${f.rank}</div><div class="fmnm">${f.name}</div><div class="fmst"><span class="fmkv"><span class="fmk">Eng: </span><span class="fmv">${f.eng}</span></span><span class="fmkv"><span class="fmk">Reach: </span><span class="fmv">${f.reach}</span></span></div><div class="fmd">${f.desc}</div>`;
+    d.onclick=()=>{
+      document.querySelectorAll('.fmc').forEach(c=>c.classList.remove('active'));
+      const det=document.getElementById('fmt-det');
+      if(activeFmt===i){activeFmt=null;det.style.display='none';return;}
+      d.classList.add('active');activeFmt=i;
+      det.innerHTML=`<div style="font-family:var(--fh);font-size:19px;font-weight:700;color:var(--text);margin-bottom:.5rem">${f.name}</div><div style="font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:1rem">${f.desc}</div><div style="background:var(--bg2);border-left:2px solid var(--accent);padding:.8rem 1.1rem;border-radius:0 8px 8px 0;font-size:13px;color:var(--text)"><strong style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);display:block;margin-bottom:4px">Estrategia de aplicación a foreclosure</strong>${f.strat}</div>`;
+      det.style.display='block';
+    };
+    g.appendChild(d);
+  });
+}
+function renderTrends(){
+  const w=document.getElementById('trends-wrap');
+  TRENDS.forEach(cat=>{
+    const div=document.createElement('div');div.className='tc-div';
+    div.innerHTML=`<div class="tc-l">${cat.label}</div><div class="tr-row"></div><div class="td-box"></div>`;
+    const row=div.querySelector('.tr-row'),box=div.querySelector('.td-box');
+    let activeK=null;
+    cat.items.forEach(t=>{
+      const p=document.createElement('div');p.className='tpill'+(t.hot?' hot':'');p.textContent=t.name;
+      p.onclick=()=>{
+        if(activeK===t.name){box.classList.remove('open');activeK=null;row.querySelectorAll('.tpill').forEach(x=>x.classList.remove('sel'));return;}
+        activeK=t.name;row.querySelectorAll('.tpill').forEach(x=>x.classList.remove('sel'));p.classList.add('sel');
+        box.innerHTML=`<div class="tdt">${t.name}</div><div class="tdb">${t.desc}</div><div class="tda"><strong>Aplicación Foreclosure</strong>${t.apply}</div>`;
+        box.classList.add('open');
+      };
+      row.appendChild(p);
+    });
+    w.appendChild(div);
+  });
+}
+function renderSources(){
+  const c=document.getElementById('sources-container');
+  SOURCES.forEach(s=>{
+    if(s.cat){const h=document.createElement('div');h.className='sc-head';h.textContent=s.cat;c.appendChild(h);return;}
+    const f=s.freq==='live'?'Tiempo real':s.freq==='weekly'?'Semanal':'Mensual';
+    const d=document.createElement('div');d.className='sc-card';
+    d.innerHTML=`<div class="sc-plat"><div class="sc-nm">${s.name}</div><div class="sc-tp">${s.type}</div></div><div class="sc-body"><div class="sc-desc">${s.desc}</div><a class="sc-url" href="${s.url}" target="_blank">${s.url.replace('https://','')}</a></div><div class="sc-freq"><span class="fb ${s.freq}">${f}</span></div>`;
+    c.appendChild(d);
+  });
+}
+function renderProto(){
+  const p=document.getElementById('protocol');
+  PROTO.forEach((s,i)=>{
+    p.innerHTML+=`<div class="step"><div class="stepn">${String(i+1).padStart(2,'0')}</div><div><div class="stept">${s.title}</div><div class="stepd">${s.desc}</div><div class="steptl">→ ${s.tool}</div></div></div>`;
+  });
+}
+function renderApply(){
+  const g=document.getElementById('apply-grid');
+  APPLY.forEach(r=>{
+    g.innerHTML+=`<div class="apply-row"><div class="apply-col"><div class="apply-hd">Categoría / Trigger</div><div class="apply-con">${r.t}</div><div style="margin-top:8px"><div class="apply-hd">Señal optimizada</div><div class="apply-con apply-mch">${r.m}</div></div></div><div class="apply-sep"></div><div class="apply-col"><div class="apply-hd">Contenido de Foreclosure</div><div class="apply-con apply-ex">${r.e}</div></div></div>`;
+  });
+}
+let activeNeuro=null;
+function renderNeuro(){
+  const g=document.getElementById('neuro-grid');
+  NEURO_CARDS.forEach((c,i)=>{
+    const d=document.createElement('div');d.className='nc';
+    d.innerHTML=`<div class="ncico">${c.ico}</div><div class="nct">${c.t}</div><div class="ncs">${c.s}</div>`;
+    d.onclick=()=>{
+      document.querySelectorAll('.nc').forEach(x=>x.classList.remove('active'));
+      const det=document.getElementById('neuro-detail');
+      if(activeNeuro===i){det.innerHTML='';det.style.display='none';activeNeuro=null;return;}
+      d.classList.add('active');activeNeuro=i;
+      const nd=NEURO_DET[i];
+      det.innerHTML=`<div class="nd open"><div class="ndt">${nd.t}</div><div class="ndb">${nd.b}</div><div class="ndap"><div class="ndaph">Aplicación directa — Foreclosure</div><div class="ndapb">${nd.apply}</div></div><div class="ndfn">Fuente: ${nd.fn}</div></div>`;
+      det.style.display='block';det.scrollIntoView({behavior:'smooth',block:'nearest'});
+    };
+    g.appendChild(d);
+  });
+}
+function renderBiases(){
+  const tb=document.getElementById('bias-tbody');
+  BIASES.forEach(b=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><div class="bname">${b.n}</div></td><td style="font-size:12px;color:var(--text2);line-height:1.55">${b.neu}</td><td style="font-size:12px;color:var(--text2);line-height:1.55">${b.app}</td><td><div class="bex">${b.hook}</div></td>`;
+    tb.appendChild(tr);
+  });
+}
+function renderPrinciples(){
+  const g=document.getElementById('principles-grid');
+  PRINCIPLES.forEach(p=>{
+    g.innerHTML+=`<div class="pcard"><div class="pnum">${p.num}</div><div class="ptitle">${p.t}</div><div class="pbody">${p.b}</div><div class="pref"><a href="${p.url}" target="_blank">${p.ref}</a></div></div>`;
+  });
+}
+function filterAPA(cat,btn){
+  document.querySelectorAll('.afbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.apa-entry').forEach(e=>{
+    e.classList.toggle('hidden',cat!=='all'&&e.dataset.cat!==cat);
+  });
+}
+function renderAPA(){
+  const list=document.getElementById('apa-list');
+  const labs={plat:'Plataformas',research:'Investigación',neuro:'Neurociencia',tools:'Herramientas'};
+  APA.forEach(r=>{
+    const d=document.createElement('div');d.className='apa-entry';d.dataset.cat=r.c;
+    d.innerHTML=`<span class="acat ${r.c}">${labs[r.c]}</span><div class="atext">${r.tx} Recuperado de <a class="aurl" href="${r.url}" target="_blank">${r.url}</a></div>${r.fn?`<div class="afn">↑ Citado en: ${r.fn}</div>`:''}`;
+    list.appendChild(d);
+  });
+}
+function setupSpy(){
+  const links=document.querySelectorAll('.nl');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector(`.nl[href="#${e.target.id}"]`);
+        if(lk)lk.classList.add('active');
+      }
+    });
+  },{threshold:.2,rootMargin:'-60px 0px -60% 0px'});
+  document.querySelectorAll('.wrap[id]').forEach(s=>io.observe(s));
+}
+renderCats();renderSigs();renderFmts();renderTrends();renderSources();renderProto();renderApply();renderNeuro();renderBiases();renderPrinciples();renderAPA();setupSpy();
+</script>
+</body>
+</html>
