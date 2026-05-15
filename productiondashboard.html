@@ -1,0 +1,387 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap');
+:root{
+  --teal:#52BEC0;--cyan:#00d4d6;--black:#0a0a0a;--dark:#111;--mid:#1e1e1e;
+  --card:#1a1a1a;--border:#2a2a2a;--muted:#555;--text:#e8e8e8;--sub:#999;
+  --gold:#c9a84c;--red:#e8390e;--green:#3a9e72;
+  --font-h:'Montserrat',sans-serif;--font-s:'Playfair Display',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--text);font-family:var(--font-h);font-size:13px;line-height:1.6;min-height:100vh}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.dashboard{max-width:1100px;margin:0 auto;padding:0 0 3rem}
+.top-bar{background:var(--mid);border-bottom:1px solid var(--teal);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:0}
+.logo{font-family:var(--font-h);font-size:18px;font-weight:700;letter-spacing:.08em}
+.logo span{color:var(--teal)}
+.logo sub{font-size:9px;font-weight:300;display:block;letter-spacing:.2em;color:var(--sub);text-transform:uppercase}
+.badge-date{font-size:10px;padding:4px 12px;border:1px solid var(--teal);color:var(--teal);border-radius:20px;letter-spacing:.1em;text-transform:uppercase}
+.tab-row{display:flex;gap:0;background:var(--dark);border-bottom:1px solid var(--border);padding:0 2rem}
+.tab{font-family:var(--font-h);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 20px;cursor:pointer;color:var(--sub);border-bottom:2px solid transparent;transition:all .2s;background:none;border-left:none;border-right:none;border-top:none}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--teal);border-bottom-color:var(--teal)}
+.panel{display:none;padding:2rem}
+.panel.active{display:block}
+.sec-title{font-family:var(--font-s);font-size:24px;font-weight:500;color:var(--text);margin-bottom:4px}
+.sec-sub{font-size:12px;color:var(--sub);margin-bottom:2rem;letter-spacing:.05em}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:2rem}
+.kpi{background:var(--card);padding:1.25rem 1.5rem}
+.kpi-n{font-family:var(--font-h);font-size:28px;font-weight:700;color:var(--teal);line-height:1}
+.kpi-l{font-size:10px;color:var(--sub);margin-top:4px;letter-spacing:.08em;text-transform:uppercase}
+.temp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1.5rem}
+.temp-card{background:var(--card);padding:1.5rem;cursor:pointer;transition:background .15s;border-top:3px solid transparent}
+.temp-card:hover{background:var(--mid)}
+.temp-card.t1{border-top-color:var(--teal)}
+.temp-card.t2{border-top-color:var(--gold)}
+.temp-card.t3{border-top-color:#8a5cf6}
+.temp-card.t4{border-top-color:var(--green)}
+.temp-label{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+.temp-name{font-family:var(--font-s);font-size:16px;color:var(--text);margin-bottom:4px}
+.temp-weeks{font-size:11px;color:var(--teal);margin-bottom:1rem}
+.piece-list{display:flex;flex-direction:column;gap:6px}
+.piece{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--mid);border-radius:6px;border:1px solid var(--border)}
+.piece-type{font-size:9px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border-radius:12px;white-space:nowrap}
+.piece-type.reel{background:rgba(82,190,192,.15);color:var(--teal);border:1px solid rgba(82,190,192,.3)}
+.piece-type.car{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
+.piece-nm{font-size:11.5px;color:var(--text);flex:1;line-height:1.4}
+.cal-legend{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cl-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--sub)}
+.cl-dot{width:10px;height:10px;border-radius:50%}
+.cal-table{width:100%;border-collapse:collapse}
+.cal-table th{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;background:var(--dark)}
+.cal-table td{padding:9px 10px;border-bottom:1px solid var(--border);font-size:11.5px;color:var(--text);vertical-align:top}
+.cal-table tr:hover td{background:var(--mid)}
+.cal-table td:first-child{white-space:nowrap;color:var(--sub)}
+.status{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.08em;white-space:nowrap}
+.status.prod{background:rgba(82,190,192,.15);color:var(--teal);border:1px solid rgba(82,190,192,.3)}
+.status.prep{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
+.status.edit{background:rgba(138,92,246,.15);color:#8a5cf6;border:1px solid rgba(138,92,246,.3)}
+.status.pub{background:rgba(58,158,114,.15);color:var(--green);border:1px solid rgba(58,158,114,.3)}
+.tag-wrap{display:flex;flex-wrap:wrap;gap:4px}
+.tag-s{font-size:9px;padding:1px 6px;border-radius:8px;background:var(--border);color:var(--sub)}
+.script-filter{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.sf-btn{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--sub);cursor:pointer;transition:all .15s}
+.sf-btn:hover{border-color:var(--teal);color:var(--teal)}
+.sf-btn.active{background:var(--teal);color:var(--black);border-color:var(--teal)}
+.script-cards{display:grid;gap:12px}
+.sc{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.sc-head{display:flex;align-items:center;gap:10px;padding:1rem 1.25rem;cursor:pointer;transition:background .15s;border-bottom:1px solid transparent}
+.sc-head:hover{background:var(--mid)}
+.sc.open .sc-head{border-bottom-color:var(--border)}
+.sc-num{font-family:var(--font-h);font-size:10px;font-weight:700;color:var(--teal);width:28px}
+.sc-info{flex:1}
+.sc-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.sc-meta{font-size:10px;color:var(--sub)}
+.sc-toggle{font-size:16px;color:var(--sub);transition:transform .2s}
+.sc.open .sc-toggle{transform:rotate(45deg);color:var(--teal)}
+.sc-body{padding:1.25rem;display:none}
+.sc.open .sc-body{display:block}
+.seg{margin-bottom:1.25rem;padding:1rem;background:var(--mid);border-radius:8px;border-left:3px solid var(--border)}
+.seg.hook{border-left-color:var(--teal)}
+.seg.dev{border-left-color:var(--gold)}
+.seg.cta{border-left-color:var(--green)}
+.seg.tech{border-left-color:#8a5cf6}
+.seg-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+.seg-text{font-size:12.5px;color:var(--text);line-height:1.75}
+.seg-text em{color:var(--teal);font-style:normal;font-weight:600}
+.seg-text b{color:var(--gold)}
+.viral-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.vtag{font-size:9px;padding:2px 8px;border-radius:10px;border:1px solid rgba(82,190,192,.3);color:var(--teal);background:rgba(82,190,192,.08)}
+.idea-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.idea-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem;position:relative;overflow:hidden}
+.idea-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.idea-card.i1::before{background:var(--teal)}
+.idea-card.i2::before{background:var(--gold)}
+.idea-card.i3::before{background:#8a5cf6}
+.idea-card.i4::before{background:var(--red)}
+.idea-card.i5::before{background:var(--green)}
+.idea-num{font-size:10px;font-weight:700;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.idea-title{font-family:var(--font-s);font-size:18px;color:var(--text);margin-bottom:.5rem}
+.idea-hook{font-size:13px;color:var(--teal);font-style:italic;margin-bottom:.75rem;line-height:1.6}
+.idea-desc{font-size:12.5px;color:var(--sub);line-height:1.75;margin-bottom:.75rem}
+.idea-badges{display:flex;gap:6px;flex-wrap:wrap}
+.ibadge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.08em}
+.ibadge.viral{background:rgba(232,57,14,.12);color:#ff6b3d;border:1px solid rgba(232,57,14,.25)}
+.ibadge.format{background:rgba(82,190,192,.12);color:var(--teal);border:1px solid rgba(82,190,192,.25)}
+.ibadge.plat{background:rgba(138,92,246,.12);color:#a07cf6;border:1px solid rgba(138,92,246,.25)}
+.divider{height:1px;background:var(--border);margin:1.5rem 0}
+</style>
+
+<h2 class="sr-only">Dashboard de producción de contenido Altaltium — Plan trimestral Junio 2026 con calendario, guiones y propuestas originales.</h2>
+<div class="dashboard">
+  <div class="top-bar">
+    <div class="logo">ALTALTIUM <span>REAL ESTATE SOLUTIONS</span><sub>Dashboard de Producción · Plan MKT Junio 2026</sub></div>
+    <div class="badge-date">Inicio: 20 May 2026</div>
+  </div>
+  <div class="tab-row">
+    <button class="tab active" onclick="showTab('resumen',this)">Resumen</button>
+    <button class="tab" onclick="showTab('calendario',this)">Calendario</button>
+    <button class="tab" onclick="showTab('guiones',this)">Guiones</button>
+    <button class="tab" onclick="showTab('ideas',this)">Nuevas Ideas</button>
+  </div>
+
+  <div id="tab-resumen" class="panel active">
+    <div class="sec-title">Plan de Producción Integral</div>
+    <div class="sec-sub">4 Temporadas · 24 piezas · Inicio: Miércoles 20 de mayo, 2026</div>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-n">24</div><div class="kpi-l">Piezas totales</div></div>
+      <div class="kpi"><div class="kpi-n">4</div><div class="kpi-l">Temporadas</div></div>
+      <div class="kpi"><div class="kpi-n">16</div><div class="kpi-l">Reels</div></div>
+      <div class="kpi"><div class="kpi-n">8</div><div class="kpi-l">Carruseles</div></div>
+    </div>
+    <div class="temp-grid">
+      <div class="temp-card t1">
+        <div class="temp-label">Temporada 1</div>
+        <div class="temp-name">Outlet Inmobiliario</div>
+        <div class="temp-weeks">Semanas 1–3 · May 20 – Jun 6</div>
+        <div class="piece-list">
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Invierte en un remate hoy</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">¿Qué es un remate bancario?</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Errores al buscar un remate</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Antes y después: propiedad en remate</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">El estafador falso (viral)</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">FAQ Remates bancarios</span></div>
+        </div>
+      </div>
+      <div class="temp-card t2">
+        <div class="temp-label">Temporada 2</div>
+        <div class="temp-name">RENOVA</div>
+        <div class="temp-weeks">Semanas 4–6 · Jun 8 – Jun 27</div>
+        <div class="piece-list">
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">¿Llevas años sin poder vender tu casa?</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">Flipping inmobiliario explicado</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Antes y después con RENOVA</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">¿Cuánto puede subir tu propiedad?</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">¿Y si hubieras invertido ese dinero?</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">Testimonio / Caso de éxito RENOVA</span></div>
+        </div>
+      </div>
+      <div class="temp-card t3">
+        <div class="temp-label">Temporada 3</div>
+        <div class="temp-name">Microinversiones</div>
+        <div class="temp-weeks">Semanas 7–9 · Jun 29 – Jul 18</div>
+        <div class="piece-list">
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Tu bienestar de mañana, hoy</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">Cómo funciona Microinversiones</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">¿Y si hubiera invertido el dinero del carro?</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">Top 5 zonas CDMX con mayor plusvalía</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Quiz: ¿Cuál producto es para ti?</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">Caso de éxito Microinversiones</span></div>
+        </div>
+      </div>
+      <div class="temp-card t4">
+        <div class="temp-label">Temporada 4</div>
+        <div class="temp-name">Soluciones Legales</div>
+        <div class="temp-weeks">Semanas 10–12 · Jul 20 – Ago 8</div>
+        <div class="piece-list">
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">¿Escrituras no protegen tu propiedad?</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">5 situaciones que necesitan asesoría legal</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">Storytelling: El propietario que casi pierde su casa</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">El folio real: el dato más importante</span></div>
+          <div class="piece"><span class="piece-type reel">REEL</span><span class="piece-nm">¿Qué hacer para evitar el desalojo?</span></div>
+          <div class="piece"><span class="piece-type car">CARRUSEL</span><span class="piece-nm">Caso de éxito: regularización completada</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-calendario" class="panel">
+    <div class="sec-title">Calendario de Producción</div>
+    <div class="sec-sub">Breakdown cinematográfico simplificado · Inicio: Miércoles 20 de mayo 2026</div>
+    <div class="cal-legend">
+      <div class="cl-item"><div class="cl-dot" style="background:var(--teal)"></div>Producción</div>
+      <div class="cl-item"><div class="cl-dot" style="background:var(--gold)"></div>Pre-producción</div>
+      <div class="cl-item"><div class="cl-dot" style="background:#8a5cf6"></div>Post-producción</div>
+      <div class="cl-item"><div class="cl-dot" style="background:var(--green)"></div>Publicación</div>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="cal-table">
+      <thead><tr>
+        <th>Fecha</th><th>ID / Título</th><th>Tipo</th><th>Locación</th><th>Props</th><th>Talento</th><th>Equipo</th><th>Referencia social</th><th>Estatus</th>
+      </tr></thead>
+      <tbody id="cal-body"></tbody>
+    </table>
+    </div>
+  </div>
+
+  <div id="tab-guiones" class="panel">
+    <div class="sec-title">Guiones de Contenido</div>
+    <div class="sec-sub">Guiones literarios y técnicos con criterios de viralidad aplicados</div>
+    <div class="script-filter">
+      <button class="sf-btn active" onclick="filterScripts('all',this)">Todos</button>
+      <button class="sf-btn" onclick="filterScripts('T1',this)">Outlet Inmobiliario</button>
+      <button class="sf-btn" onclick="filterScripts('T2',this)">RENOVA</button>
+      <button class="sf-btn" onclick="filterScripts('T3',this)">Microinversiones</button>
+      <button class="sf-btn" onclick="filterScripts('T4',this)">Soluciones Legales</button>
+    </div>
+    <div class="script-cards" id="scripts-container"></div>
+  </div>
+
+  <div id="tab-ideas" class="panel">
+    <div class="sec-title">5 Propuestas Originales Disruptivas</div>
+    <div class="sec-sub">Ideas nuevas no contempladas en el plan, alineadas con la identidad Altaltium y criterios máximos de viralidad</div>
+    <div class="idea-grid" id="ideas-container"></div>
+  </div>
+</div>
+
+<script>
+const CAL = [
+  {fecha:'Mié 20 May',id:'T1-R01',titulo:'Invierte en un remate hoy',tipo:'Reel',loc:'Oficina Altaltium / Ext. propiedad en remate',props:'Laptop, documentos de escritura, maqueta de casa',talento:'Presenter principal (Denisse o talent)',equipo:'Cámara Sony ZV-E10, Ring light, Mic lavalier',ref:'Hook numérico + CTA WhatsApp',status:'prep'},
+  {fecha:'Jue 21 May',id:'T1-C01',titulo:'Guía Visual: ¿Qué es un remate bancario?',tipo:'Carrusel',loc:'Estudio/Oficina',props:'Infografías impresas, pizarrón, pluma Altaltium',talento:'Narrador VO + diseño gráfico',equipo:'Diseño digital + VO grabada',ref:'Educativo evergreen · Saves',status:'prep'},
+  {fecha:'Lun 25 May',id:'T1-R02',titulo:'Errores que cometí al buscar un remate',tipo:'Reel',loc:'Ext. urbano CDMX / Calle con propiedades',props:'Libreta, teléfono, señales de propiedades',talento:'Presenter principal (storytelling personal)',equipo:'iPhone gimbal + Rode Wireless GO II',ref:'Storytelling + Red flags · Arousal emocional',status:'prep'},
+  {fecha:'Mié 27 May',id:'T1-R03',titulo:'Antes y después: propiedad en remate → vendida',tipo:'Reel',loc:'Propiedad real (caso real o reconstruido)',props:'Cinta métrica, documentos, before/after props',talento:'Presenter + VO',equipo:'Cámara completa + gimbal + tripié',ref:'Before/After · Completion rate + Saves',status:'prep'},
+  {fecha:'Lun 1 Jun',id:'T1-R04',titulo:'Entrevista al estafador falso',tipo:'Reel',loc:'Estudio oscuro / set dramático',props:'Silla, luz lateral, gorra de personaje, shadowed face',talento:'Actor/personaje + director de arte',equipo:'Cámara + iluminación dramática + micro cardioide',ref:'Controversia · Conocimiento prohibido · Viral alto',status:'prep'},
+  {fecha:'Mié 3 Jun',id:'T1-C02',titulo:'FAQ: Preguntas frecuentes sobre remates',tipo:'Carrusel',loc:'Oficina / Estudio',props:'Diseño digital, branding Altaltium',talento:'Diseño gráfico + VO opcional',equipo:'Diseño + VO',ref:'Objeciones · Saves + DMs',status:'prep'},
+  {fecha:'Lun 8 Jun',id:'T2-R01',titulo:'¿Llevas años sin poder vender tu casa?',tipo:'Reel',loc:'Ext. propiedad sin vender / Oficina',props:'Cartel "Se vende" desgastado, documentos, calculadora',talento:'Presenter principal',equipo:'Cámara + ring light + Rode Wireless',ref:'Loop cognitivo abierto · Relatabilidad · Shares',status:'prep'},
+  {fecha:'Mié 10 Jun',id:'T2-C01',titulo:'Flipping inmobiliario: qué es y cómo funciona',tipo:'Carrusel',loc:'Estudio / Diseño digital',props:'Infografías, renders de propiedades',talento:'Diseñador + VO',equipo:'Diseño digital + grabación VO',ref:'Educativo · Saves + Follows',status:'prep'},
+  {fecha:'Lun 15 Jun',id:'T2-R02',titulo:'Antes y después con RENOVA',tipo:'Reel',loc:'Propiedad remodelada real',props:'Materiales de construcción, renders, datos impresos',talento:'Presenter + equipo de obra (opcional)',equipo:'Cámara completa + gimbal + drone opcional',ref:'Before/After visual · Satisfacción neurológica · Completion',status:'prep'},
+  {fecha:'Mié 17 Jun',id:'T2-C02',titulo:'¿Cuánto puede subir el valor de tu propiedad?',tipo:'Carrusel',loc:'Diseño digital',props:'Simulador ROI, gráficas, datos de plusvalía CDMX',talento:'Diseñador gráfico',equipo:'Diseño + VO',ref:'Especificidad numérica · Arousal emocional',status:'prep'},
+  {fecha:'Lun 22 Jun',id:'T2-R03',titulo:'¿Y si hubieras invertido ese dinero en Altaltium?',tipo:'Reel',loc:'Ext. urbano / Lifestyle shots',props:'Tarjeta de crédito, carro, artículos de consumo vs. llave de propiedad',talento:'Presenter + VO dramática',equipo:'Cámara + gimbal + B-roll urbano',ref:'Aversión a la pérdida · Loop cognitivo · Viralidad alta',status:'prep'},
+  {fecha:'Mié 24 Jun',id:'T2-C03',titulo:'Testimonio / Caso de éxito RENOVA',tipo:'Carrusel',loc:'Propiedad remodelada / Oficina Altaltium',props:'Documentos del caso, fotos del proceso, datos financieros',talento:'Cliente real (si disponible) + diseño',equipo:'Diseño + fotos del cliente',ref:'Prueba social · Credibilidad · Follows',status:'prep'},
+  {fecha:'Lun 29 Jun',id:'T3-R01',titulo:'Tu bienestar de mañana en tu inversión de hoy',tipo:'Reel',loc:'Ext. lifestyle / Ciudad CDMX',props:'Infografía de dato de pensiones/retiro, smartphone con app',talento:'Presenter + VO dramática',equipo:'Cámara + gimbal + B-roll ciudad',ref:'Dato disruptivo · Miedo/urgencia · Shares',status:'prep'},
+  {fecha:'Mié 1 Jul',id:'T3-C01',titulo:'Cómo funciona Microinversiones',tipo:'Carrusel',loc:'Diseño digital / Oficina',props:'Simulador numérico, gráficas de crecimiento, branding',talento:'Diseñador + VO',equipo:'Diseño + grabación VO',ref:'Utilidad práctica · Especificidad numérica · Saves',status:'prep'},
+  {fecha:'Lun 6 Jul',id:'T3-R02',titulo:'¿Y si hubiera invertido lo del carro en esto?',tipo:'Reel',loc:'Ext. concesionaria / Oficina Altaltium',props:'Carro de referencia, calculadora, datos de inversión',talento:'Presenter principal',equipo:'Cámara + mic lavalier + B-roll',ref:'Arousal emocional · Aversión a la pérdida · Viralidad',status:'prep'},
+  {fecha:'Mié 8 Jul',id:'T3-C02',titulo:'Top 5 zonas CDMX con mayor plusvalía 2026',tipo:'Carrusel',loc:'Diseño digital',props:'Mapa CDMX, datos de plusvalía por colonia, renders',talento:'Diseñador + investigación de mercado',equipo:'Diseño + datos propios Altaltium',ref:'Información local · Moneda social · Saves masivos',status:'prep'},
+  {fecha:'Lun 13 Jul',id:'T3-R03',titulo:'Quiz: ¿Cuál producto de Altaltium es para ti?',tipo:'Reel',loc:'Estudio / Oficina Altaltium',props:'Cards de cada producto, pizarrón o pantalla interactiva',talento:'Presenter dinámico',equipo:'Cámara + ring light + mic lavalier',ref:'Interactividad · Identidad · Segmentación · Comentarios',status:'prep'},
+  {fecha:'Mié 15 Jul',id:'T3-C03',titulo:'Caso de éxito Microinversiones',tipo:'Carrusel',loc:'Oficina / Diseño',props:'Documentación del caso, datos financieros concretos',talento:'Diseñador + cliente real si disponible',equipo:'Diseño + VO',ref:'Prueba social · Números reales · Conversión',status:'prep'},
+  {fecha:'Lun 20 Jul',id:'T4-R01',titulo:'¿Sabías que las escrituras no protegen del todo tu propiedad?',tipo:'Reel',loc:'Notaría / Oficina legal',props:'Escrituras, sello notarial, documentos legales',talento:'Presenter principal + abogado (si disponible)',equipo:'Cámara + ring light + mic lavalier',ref:'Conocimiento prohibido · Loop abierto · Saves + Shares',status:'prep'},
+  {fecha:'Mié 22 Jul',id:'T4-C01',titulo:'5 situaciones donde necesitas Soluciones Legales',tipo:'Carrusel',loc:'Diseño digital',props:'Checklist visual, íconos temáticos, casos reales',talento:'Diseñador + VO',equipo:'Diseño + grabación VO',ref:'Utilidad práctica · Urgencia · Saves masivos',status:'prep'},
+  {fecha:'Lun 27 Jul',id:'T4-R02',titulo:'Storytelling: El propietario que casi pierde su casa',tipo:'Reel',loc:'Ext. propiedad / Oficina legal / Sala',props:'Animación/personaje o actor, documentos de desalojo',talento:'Actor/personaje animado + VO dramática',equipo:'Cámara + iluminación dramática + mic cardioide',ref:'Storytelling · Arousal emocional · Neuronas espejo · Viral',status:'prep'},
+  {fecha:'Mié 29 Jul',id:'T4-C02',titulo:'El folio real: el dato más importante de tu propiedad',tipo:'Carrusel',loc:'Diseño digital / Pantalla con RPPC',props:'Captura del RPPC, documentos, íconos legales',talento:'Diseñador + VO especializada',equipo:'Diseño + screen recording + VO',ref:'Conocimiento prohibido · Saves altísimos · Educativo',status:'prep'},
+  {fecha:'Lun 3 Ago',id:'T4-R03',titulo:'¿Qué hacer para evitar que me desalojen?',tipo:'Reel',loc:'Estudio / Oficina Altaltium',props:'Documentos legales, sello, llave de propiedad',talento:'Presenter + abogado especialista',equipo:'Cámara + ring light + mic lavalier',ref:'Urgencia extrema · Arousal · CTA fuerte · Conversión',status:'prep'},
+  {fecha:'Mié 5 Ago',id:'T4-C03',titulo:'Caso de éxito: regularización completada con Altaltium',tipo:'Carrusel',loc:'Oficina / Propiedad regularizada',props:'Documentación final del caso, fotos antes/después legal',talento:'Cliente real (si disponible) + diseñador',equipo:'Diseño + datos del caso',ref:'Prueba social · Cierre de temporada · Conversión máxima',status:'prep'},
+];
+
+const SCRIPTS = [
+  {id:'T1-R01',temp:'T1',titulo:'Invierte en un remate hoy y tendrás casa para finales de este año',tipo:'Reel · 30–45 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[ON SCREEN: "$340,000 → $89,000"]</em>\n📍 PRESENTER a cámara, directo:\n"Esta casa en CDMX valía $340,000 pesos. La adquirimos en remate bancario por $89,000. En 6 meses ya era de un propietario feliz."\n<em>[Corte instantáneo al exterior de la propiedad]</em>',tags:['Número imposible','Pattern interrupt','Frame 0 impacto']},
+   dev:{label:'DESARROLLO (3–38 seg)',text:'<b>[VO + B-ROLL de propiedad y documentos]</b>\n"Los remates bancarios existen porque los bancos necesitan liquidez. Y cuando necesitan liquidez, venden rápido.\n<em>[Cut: Documento de escritura en pantalla]</em>\nAltaltium hace lo que tú no tienes tiempo de hacer: encuentra las mejores propiedades en remate, verifica la situación legal, y te acompaña hasta que firmes.\n<em>[Cut: Presenter caminando en exterior de propiedad]</em>\nEl proceso dura entre 3 y 6 meses. Y puedes entrar desde $150,000 pesos."\n<em>[ON SCREEN en cada dato clave]</em>'},
+   cta:{label:'CTA (38–45 seg)',text:'<em>[PRESENTER a cámara, energía alta]</em>\n"Si quieres conocer las propiedades disponibles esta semana, escríbenos al WhatsApp del bio o comenta REMATE y te mandamos la lista.\n<em>[ON SCREEN: Logo Altaltium + WhatsApp + @altaltiumrealestates]</em>"\n<b>CTA en texto: "Comenta REMATE 👇"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Cortes cada 2–3 seg en la sección de desarrollo\n• Trending audio a volumen 15% como fondo\n• Subtítulos en todos los datos numéricos\n• Cover frame: número "$89,000" en pantalla grande\n• Publicar martes o miércoles 7–9pm'}},
+  {id:'T1-R04',temp:'T1',titulo:'Entrevista al estafador falso — Cómo detectar fraudes en remates',tipo:'Reel · 45–60 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[Iluminación dramática lateral · Personaje con gorra baja · Voz modulada]</em>\n"Soy un estafador inmobiliario. Y voy a decirte exactamente cómo estafamos a la gente en los remates."\n<em>[ON SCREEN: "⚠️ PERSONAJE FICTICIO · INFORMACIÓN REAL"]</em>',tags:['Conocimiento prohibido','Controversia adyacente','Arousal máximo']},
+   dev:{label:'DESARROLLO (3–52 seg)',text:'<b>[Personaje "confesa" cada técnica, intercalado con overlay de datos]</b>\n"Primero: te pedimos un depósito "para apartar" la propiedad. Las subastas legales no tienen depósitos previos.\n<em>[Cut: overlay rojo "SEÑAL DE FRAUDE #1"]</em>\nSegundo: te mostramos fotos increíbles pero no puedes visitar la propiedad. Una propiedad real siempre es visitable antes de la subasta.\n<em>[Cut: overlay rojo "SEÑAL DE FRAUDE #2"]</em>\nTercero: el precio es tan bueno que parece imposible. Si es demasiado bueno, busca el folio en el Registro Público.\n<em>[Cut: overlay rojo "SEÑAL DE FRAUDE #3"]</em>\n¿Y cómo evitarlo? Trabaja solo con empresas verificadas que te muestren documentos reales."'},
+   cta:{label:'CTA (52–60 seg)',text:'<em>[Personaje se quita la gorra, rompe el personaje · Presenter real aparece]</em>\n"Nosotros en Altaltium te mostramos TODOS los documentos antes de cualquier compromiso. Si tienes dudas sobre un remate que te ofrecieron, escríbenos y lo verificamos juntos."\n<b>CTA en texto: "Guarda este video antes de ir a tu próxima subasta 🔖"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Set oscuro con luz lateral · Contraste dramático\n• Transición de personaje al final: corte limpio\n• Overlays rojos de alerta con tipografía Montserrat Bold\n• Audio: silencio dramático + sound design tension\n• Alto potencial de stitch y dueto de otros creadores'}},
+  {id:'T1-R02',temp:'T1',titulo:'Errores que cometí al buscar un remate bancario',tipo:'Reel · 45–60 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[PRESENTER caminando en calle, energía de confesión]</em>\n"Cometí 3 errores que casi me cuestan $80,000 pesos al buscar mi primer remate. Si hubieras visto este video, te los ahorro."\n<em>[ON SCREEN: "3 errores = $80,000 pesos perdidos"]</em>',tags:['Arousal emocional','Aversión a la pérdida','Relatabilidad','Loop abierto']},
+   dev:{label:'DESARROLLO (3–50 seg)',text:'<b>[Storytelling personal · Cortes rápidos · B-roll de búsqueda de propiedad]</b>\n"Error 1: No verifiqué el folio real antes de ir a la subasta. El folio es tu escudo legal. Sin él, estás apostando.\n<em>[Cut: pantalla con RPPC · ON SCREEN: "FOLIO REAL = obligatorio"]</em>\nError 2: Fui solo. Las subastas tienen lenguaje técnico y presión de tiempo. Necesitas a alguien que sepa.\n<em>[Cut: imagen de subasta · ON SCREEN: "SIEMPRE con asesor"]</em>\nError 3: No pregunté sobre gravámenes. Una propiedad barata con deudas pendientes no es un buen negocio.\n<em>[Cut: Presenter a cámara, directo]</em>\nAltaltium nos encargamos de los 3 antes de que metas un solo peso."'},
+   cta:{label:'CTA (50–60 seg)',text:'<em>[Energía directa, mira a cámara]</em>\n"¿Ya tienes claro el proceso de una subasta? Comenta PROCESO y te mandamos la guía gratuita paso a paso."\n<b>CTA: "Guarda esto antes de ir a tu primera subasta 🔖"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Rodar en exterior urbano con propiedad visible al fondo\n• Cortes cada 2–3 seg en la sección de errores\n• Subtítulos on-screen en cada error\n• Trending audio bajo como fondo\n• Cover frame: "3 errores = $80,000 pesos"'}},
+  {id:'T2-R01',temp:'T2',titulo:'¿Llevas años sin poder vender tu casa?',tipo:'Reel · 30–45 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[ON SCREEN: "¿Tu casa lleva +1 año en venta?"]</em>\n<em>[PRESENTER frente a propiedad con cartel "SE VENDE" desgastado]</em>\n"Si tu casa lleva más de 6 meses en venta y no has recibido ninguna oferta real, no es el precio. Es el estado del inmueble."',tags:['Pattern interrupt','Loop abierto','Relatabilidad','Arousal emocional']},
+   dev:{label:'DESARROLLO (3–38 seg)',text:'<b>[VO + B-roll · Antes/después de propiedad]</b>\n"El mercado de CDMX es implacable. Una propiedad que no entra en los estándares visuales del comprador promedio simplemente no se vende, sin importar cuántas portales uses.\n<em>[Cut: propiedad sin remodelar → propiedad remodelada]</em>\nRENOVA de Altaltium trabaja diferente: ponemos el capital y la mano de obra para remodelar tu propiedad. Tú no inviertes nada ahora. Cuando se vende, dividimos la plusvalía.\n<em>[ON SCREEN: "Tú: $0 inversión hoy · Altaltium: mano de obra + capital · Resultado: plusvalía compartida"]</em>"'},
+   cta:{label:'CTA (38–45 seg)',text:'<em>[PRESENTER directo a cámara]</em>\n"Si tienes una propiedad que no se vende, escríbenos. Hacemos una evaluación gratuita y sin compromiso."\n<b>CTA en texto: "Comenta RENOVA y te contactamos 🏠"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Exterior de propiedad real como locación principal\n• Cartel "SE VENDE" desgastado como prop visual poderoso\n• B-roll de antes/después (solicitar a equipo de RENOVA)\n• Cortes rápidos con on-screen en datos del modelo\n• Publicar lunes 7–9am para commuters en CDMX'}},
+  {id:'T2-R03',temp:'T2',titulo:'¿Y si hubieras invertido ese dinero en Altaltium?',tipo:'Reel · 45–60 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[ON SCREEN: "Ese carro te costó $280,000 pesos"]</em>\n<em>[PRESENTER junto a carro, tono directo]</em>\n"$280,000 pesos en un carro que vale $180,000 en 3 años. ¿Y si los hubieras puesto en una microinversión inmobiliaria?"',tags:['Arousal emocional','Aversión a la pérdida','Contraste numérico','Moneda social']},
+   dev:{label:'DESARROLLO (3–50 seg)',text:'<b>[Simulación visual · Gráfica de depreciación vs. plusvalía]</b>\n"Un carro pierde entre el 20% y el 35% de su valor en el primer año. Una propiedad en CDMX en las zonas correctas gana entre el 8% y el 15% anual.\n<em>[ON SCREEN: Gráfica de depreciación del carro vs. crecimiento inmobiliario]</em>\n$280,000 en Altaltium Microinversiones a 5 años puede representar una fracción de un inmueble valuado en más de $1.5 millones.\n<em>[Cut: Presenter mira a cámara]</em>\nNo te estamos diciendo que no compres el carro. Te estamos diciendo que primero pon a trabajar tu dinero."'},
+   cta:{label:'CTA (50–60 seg)',text:'<em>[Energía aspiracional]</em>\n"¿Cuánto puedes invertir hoy? Escríbenos al WhatsApp y un asesor te diseña tu plan personal en 24 horas."\n<b>CTA: "Comenta INVERSIÓN y te mandamos la simulación 📊"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• B-roll en concesionaria de autos (o ext. con carro de referencia)\n• Gráfica animada depreciación vs. plusvalía (diseño Altaltium)\n• Trending audio motivacional/aspiracional de fondo\n• ON SCREEN en cada cifra clave\n• Alto potencial de shares por identificación personal'}},
+  {id:'T3-R01',temp:'T3',titulo:'Tu bienestar de mañana en tu inversión de hoy',tipo:'Reel · 30–45 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[ON SCREEN: dato de choque · Texto grande · Sin audio al inicio]</em>\n"El 78% de los mexicanos llegará a los 65 años sin suficiente dinero para jubilarse. El 78%."\n<em>[Pausa de 1 segundo · Silencio · PRESENTER aparece]</em>',tags:['Dato disruptivo','Miedo + urgencia','Arousal alto','Moneda social']},
+   dev:{label:'DESARROLLO (3–38 seg)',text:'<b>[VO urgente pero constructiva · B-roll de ciudad CDMX]</b>\n"El sistema de pensiones en México no está diseñado para mantenerte. Y el IMSS en 2026 proyecta una tasa de sustitución del 30% de tu último sueldo.\n<em>[ON SCREEN: "30% de tu sueldo = tu pensión"]</em>\nMicroinversiones de Altaltium es la alternativa: entras con montos desde $50,000 pesos y participas en proyectos inmobiliarios reales en CDMX. Sin necesidad de comprar una propiedad completa. Sin deudas. Con rendimientos proyectados del 12% al 18% anual.\n<em>[ON SCREEN: Gráfica de crecimiento de inversión · Datos de rendimiento]</em>"'},
+   cta:{label:'CTA (38–45 seg)',text:'<em>[PRESENTER directo · Tono de urgencia controlada]</em>\n"¿En qué año empiezas a preparar tu retiro? Escríbenos hoy al WhatsApp y hacemos tu simulación gratuita."\n<b>CTA: "Guarda esto y compártelo con quien lo necesite 🔖"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Apertura en silencio con on-screen de dato · Muy efectivo\n• B-roll lifestyle CDMX · Personas de 30–45 años en cotidiano\n• Trending audio emotivo/aspiracional a volumen bajo\n• Datos verificables en on-screen (proyecciones reales del IMSS)\n• Potencial de guardado muy alto por utilidad futura'}},
+  {id:'T4-R01',temp:'T4',titulo:'¿Sabías que tener escrituras no es suficiente para proteger tu propiedad en México?',tipo:'Reel · 45–60 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[PRESENTER en exterior de notaría o propiedad · Tono grave]</em>\n"Tienes escrituras. Crees que tu propiedad está protegida. Pero hay 4 situaciones en las que esas escrituras no valen nada."\n<em>[ON SCREEN: "⚠️ 4 situaciones donde TUS escrituras no te protegen"]</em>',tags:['Conocimiento prohibido','Loop abierto','Urgencia legal','Saves altos']},
+   dev:{label:'DESARROLLO (3–52 seg)',text:'<b>[PRESENTER a cámara + overlay visual · Ritmo urgente]</b>\n"Uno: si la propiedad tiene gravámenes anteriores al momento de la compra. Aunque compraste de buena fe, los gravámenes siguen.\n<em>[ON SCREEN: "GRAVÁMENES no declarados = tu problema"]</em>\nDos: si el vendedor no tenía capacidad legal de vender, el contrato puede anularse años después.\nTres: si hay una sucesión intestada no resuelta. Herederos que aparecen pueden demandar tu propiedad.\n<em>[ON SCREEN: "SUCESIÓN INTESTADA = riesgo oculto"]</em>\nCuatro: si tu propiedad está en obra negra. Sin permisos, no puedes vender, renovar ni obtener crédito.\n<em>[Cut: PRESENTER directo a cámara]</em>\nAltaltium Soluciones Legales revisa y resuelve las 4 situaciones antes de que se conviertan en un problema legal."'},
+   cta:{label:'CTA (52–60 seg)',text:'<em>[Tono urgente + directo]</em>\n"Revisa ahora el folio de tu propiedad en el Registro Público. Y si tienes dudas, escríbenos. Primera consulta gratuita."\n<b>CTA: "Guarda esto · Puede salvarte de un problema legal enorme 🔖"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Locación notaría o ambiente legal: aumenta credibilidad inmediata\n• Overlay de alerta visual en cada situación (rojo/naranja)\n• Cortes rápidos entre situaciones · 2–3 seg cada una\n• Subtítulos en TODOS los datos legales\n• Trending audio serio/news de fondo · No música ligera\n• Candidato fuerte a video viral por utilidad alta'}},
+  {id:'T4-R02',temp:'T4',titulo:'Storytelling: El propietario que casi pierde su casa por no regularizar',tipo:'Reel · 55–60 seg',
+   hook:{label:'GANCHO (0–3 seg)',text:'<em>[Voz en off dramática · Personaje animado o actor]</em>\n"Roberto tiene 55 años. Vivió 20 años en esa casa. Y un día llegó una notificación de desalojo que no esperaba."\n<em>[ON SCREEN: "Historia real reconstruida · Solo los nombres fueron cambiados"]</em>',tags:['Storytelling','Neuronas espejo','Arousal emocional','Empatía profunda']},
+   dev:{label:'DESARROLLO (3–52 seg)',text:'<b>[Narración en VO · Animación de personaje o actor que encarna a Roberto]</b>\n"Roberto compró la casa hace 20 años. Escrituras en mano, seguro de estar protegido. Lo que no sabía: la propiedad tenía una sucesión intestada de los años 90 sin resolver.\n<em>[Cut: documento de notificación legal · ON SCREEN: "Sucesión intestada: riesgo oculto"]</em>\nUn sobrino lejano del vendedor original apareció con un abogado. Y tenía razón legal de su lado.\nRoberto nos contactó con el aviso de desalojo en la mano. 60 días para resolver lo que llevaba 30 años pendiente.\n<em>[Cut: equipo de Altaltium revisando documentos]</em>\nEn 47 días, el equipo de Soluciones Legales de Altaltium cerró el caso. Roberto sigue en su casa."'},
+   cta:{label:'CTA (52–60 seg)',text:'<em>[Pausa dramática · PRESENTER aparece]</em>\n"Esta historia pasa más seguido de lo que crees. Y se puede prevenir con una revisión de folio de 30 minutos. ¿Cuánto vale tu tranquilidad?"\n<b>CTA: "Comenta FOLIO y hacemos la revisión gratuita de tu propiedad"</b>'},
+   tech:{label:'NOTAS TÉCNICAS',text:'• Animación de personaje o actor · Tono dramático pero cercano\n• VO con pauses dramáticas para crear tensión\n• Música dramática instrumental de fondo · Sin trending aquí\n• Alta candidatura a clip viral y stitch\n• ON SCREEN: datos del caso (anónimos pero verificables)\n• Cierre con aparición real del presenter: rompe el storytelling'}}
+];
+
+const IDEAS = [
+  {cls:'i1',
+   num:'Idea 01',
+   title:'El Mapa en Vivo de Oportunidades',
+   hook:'"Esta semana hay 23 propiedades en remate bancario en CDMX con precio menor a $500K. Te muestro 3 en tiempo real."',
+   desc:'Serie mensual donde Altaltium muestra en tiempo real propiedades disponibles en remate, con datos verificables: ubicación, precio, estado legal. El presenter recorre virtualmente cada opción usando Google Maps + registros públicos. Educa y genera urgencia real. Formato de video largo (90 seg) con cortes en reel de 60 seg.',
+   viral:'Urgencia real · Prueba concreta',format:'Serie mensual · Reel + IG Live',plat:'Instagram · TikTok · Facebook'},
+  {cls:'i2',
+   num:'Idea 02',
+   title:'Altaltium vs. Hipoteca Tradicional',
+   hook:'"$500,000 pesos. Opción A: hipoteca en banco. Opción B: Altaltium Microinversiones. Resultados en 5 años — el análisis nadie te hace."',
+   desc:'Comparativa visual y numérica entre una hipoteca bancaria tradicional y las alternativas del ecosistema Altaltium. Muestra tasas reales, costos ocultos bancarios, tiempo de proceso y ROI proyectado. Altamente compartible porque ayuda a tomar decisiones financieras reales. Formato carrusel + reel resumen.',
+   viral:'Moneda social · Especificidad numérica',format:'Carrusel + Reel resumen',plat:'Instagram · Facebook (25–54 años)'},
+  {cls:'i3',
+   num:'Idea 03',
+   title:'Serie "Semana 1 en tu nueva propiedad"',
+   hook:'"Firmamos hoy. Te muestro en 4 videos lo que pasa semana a semana desde la firma hasta la llave en mano."',
+   desc:'Serie documental filmada en tiempo real de un deal de Altaltium: desde la subasta hasta la entrega de llaves. 4 episodios de 45–60 seg, publicados semanalmente con cliffhanger al final de cada uno. El formato episódico es el más poderoso para convertir espectadores en seguidores. Requiere un caso real activo.',
+   viral:'Serie episódica · Cliffhanger · Follows',format:'Serie 4 episodios · Reel',plat:'TikTok · Instagram (máximo viral)'},
+  {cls:'i4',
+   num:'Idea 04',
+   title:'Dueto con el Miedo: "Lo que me da miedo de los remates"',
+   desc:'Reel donde el presenter lee en voz alta los comentarios de miedo más comunes en sus posts anteriores ("¿Y si me estafan?", "¿Y si la propiedad tiene problemas?") y los responde uno a uno con datos y documentos reales. Activa tribalismo de seguidores que defienden la respuesta. Alta tasa de stitch y dueto.',
+   hook:'"Leyendo los comentarios más asustados de nuestros posts — y respondiendo cada uno con datos reales."',
+   viral:'Stitch bait · Prueba social · Controversia',format:'Reel · Lectura de comentarios',plat:'TikTok (stitch) · Instagram'},
+  {cls:'i5',
+   num:'Idea 05',
+   title:'Altaltium Live: Subasta en Tiempo Real',
+   desc:'Transmisión en vivo desde una subasta bancaria real, explicando el proceso al espectador en tiempo real: cómo funciona el remate, qué documentos se presentan, cómo se puja, cuánto dura. El live education en tiempo real es el formato de más alta credibilidad y menor saturación en el nicho inmobiliario CDMX.',
+   hook:'"Estamos EN una subasta bancaria ahora mismo. Te explico todo en vivo, paso a paso."',
+   viral:'Prueba concreta · Novedad genuina · Credibilidad máxima',format:'Instagram Live · Facebook Live · Grabación para Reel',plat:'Instagram · Facebook (conversión directa)'}
+];
+
+function showTab(id, btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function buildCal(){
+  const tb=document.getElementById('cal-body');
+  const statusMap={prod:'Producción',prep:'Pre-prod.',edit:'Post-prod.',pub:'Publicado'};
+  CAL.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${r.fecha}</td><td><b style="color:var(--teal);font-size:10px">${r.id}</b><br>${r.titulo}</td><td><span class="piece-type ${r.tipo==='Reel'?'reel':'car'}">${r.tipo}</span></td><td style="font-size:11px;color:var(--sub)">${r.loc}</td><td style="font-size:11px;color:var(--sub)">${r.props}</td><td style="font-size:11px;color:var(--sub)">${r.talento}</td><td style="font-size:11px;color:var(--sub)">${r.equipo}</td><td style="font-size:11px;color:var(--sub)">${r.ref}</td><td><span class="status ${r.status}">${statusMap[r.status]}</span></td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function buildScripts(){
+  const c=document.getElementById('scripts-container');
+  SCRIPTS.forEach((s,i)=>{
+    const div=document.createElement('div');
+    div.className='sc';
+    div.dataset.temp=s.temp;
+    div.innerHTML=`<div class="sc-head" onclick="toggleScript(this)"><div class="sc-num">${String(i+1).padStart(2,'0')}</div><div class="sc-info"><div class="sc-title">${s.titulo}</div><div class="sc-meta">${s.tipo} · ${s.id}</div></div><div class="sc-toggle">+</div></div><div class="sc-body"><div class="seg hook"><div class="seg-label">${s.hook.label}</div><div class="seg-text">${s.hook.text.replace(/\n/g,'<br>')}</div><div class="viral-tags">${s.hook.tags.map(t=>`<span class="vtag">${t}</span>`).join('')}</div></div><div class="seg dev"><div class="seg-label">${s.dev.label}</div><div class="seg-text">${s.dev.text.replace(/\n/g,'<br>')}</div></div><div class="seg cta"><div class="seg-label">${s.cta.label}</div><div class="seg-text">${s.cta.text.replace(/\n/g,'<br>')}</div></div><div class="seg tech"><div class="seg-label">${s.tech.label}</div><div class="seg-text">${s.tech.text.replace(/\n/g,'<br>')}</div></div></div>`;
+    c.appendChild(div);
+  });
+}
+
+function toggleScript(head){
+  const sc=head.parentElement;
+  const isOpen=sc.classList.contains('open');
+  sc.classList.toggle('open',!isOpen);
+  head.querySelector('.sc-toggle').textContent=isOpen?'+':'×';
+}
+
+function filterScripts(temp,btn){
+  document.querySelectorAll('.sf-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.sc').forEach(sc=>{
+    sc.style.display=(temp==='all'||sc.dataset.temp===temp)?'':'none';
+  });
+}
+
+function buildIdeas(){
+  const c=document.getElementById('ideas-container');
+  IDEAS.forEach(idea=>{
+    const div=document.createElement('div');
+    div.className='idea-card '+idea.cls;
+    div.innerHTML=`<div class="idea-num">${idea.num}</div><div class="idea-title">${idea.title}</div><div class="idea-hook">${idea.hook}</div><div class="idea-desc">${idea.desc}</div><div class="idea-badges"><span class="ibadge viral">${idea.viral}</span><span class="ibadge format">${idea.format}</span><span class="ibadge plat">${idea.plat}</span></div>`;
+    c.appendChild(div);
+  });
+}
+
+buildCal();
+buildScripts();
+buildIdeas();
+</script>
